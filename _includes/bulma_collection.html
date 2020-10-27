@@ -1,0 +1,42 @@
+<div class="menu">
+    <p class="menu-label">{{include.title}}</p>
+    <ul class="menu-list">
+        {% assign section = true %}
+        {% assign first = true %}
+        {% assign menus = site[include.collection] | sort: "order", "last" %}
+
+        {% for menu in menus %}
+        {% if first %}
+            {% if menu.section %}
+                <li>
+            {% else %}
+                <li><ul><li>
+            {% endif %}
+            {% assign first = false %}
+        {% else %}
+            {% if section %}
+                {% if menu.section %}
+                    </li><li>
+                {% else %}
+                    <ul><li>
+                {% endif %}
+            {% else %}
+                {% if menu.section %}
+                    </li></ul></li><li>
+                {% else %}
+                    </li><li>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
+        <a class="{% if page.url == menu.url %}is-active{% endif %}" href="{{ menu.url }}">{{menu.title}}</a>
+
+        {% assign section = menu.section %}
+        {% endfor %}
+        {% if section %}
+            </li>
+        {% else %}
+            </li></ul></li>
+        {% endif %}
+    </ul>
+</div>

@@ -1,0 +1,11 @@
+---
+title: Collections
+layout: page
+permalink: /collections/
+---
+
+{% for collection in site.collections %}
+{% if collection.label != "posts" %}
+{% include bulma_collection.html title=collection.title collection=collection.label %}
+{% endif %}
+{% endfor %}

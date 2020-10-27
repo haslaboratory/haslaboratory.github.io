@@ -1,0 +1,34 @@
+title: HAS-LAB
+description: The computer world is a world of dialect.
+permalink: /:year/:month/:day/:title:output_ext
+exclude: [project, src, build.sbt, CNAME, LICENSE, README.md]
+
+collections:
+
+jekyll-archives:
+  enabled: all
+  layout: archive
+  permalinks:
+    year: /:year/
+    month: /:year/:month/
+    day: /:year/:month/:day/
+    tag: /tag/:name/
+    category: /category/:name/
+
+paginate: 12
+paginate_path: /blog/:num/
+
+gems:
+  - jekyll-avatar
+  - jekyll-coffeescript
+  - jekyll-feed
+  - jekyll-github
+  - jekyll-github-metadata
+  - jekyll-gist
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-sass-converter
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji

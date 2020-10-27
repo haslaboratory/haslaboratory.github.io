@@ -1,0 +1,14 @@
+{% assign youtube = "https://www.youtube.com/watch?v=" %}
+{% assign bilibili_av = "https://www.bilibili.com/video/av" %}
+{% assign bilibili_bv = "https://www.bilibili.com/video/BV" %}
+
+{% if include.id contains youtube %}
+    {% assign id = include.id | replace:youtube, "" %}
+    {% include video_youtube.html id=id %}
+{% elsif include.id == bilibili_bv %}
+    {% assign id = include.id | replace:bilibili_bv, "" %}
+    {% include video_bilibili_bv.html id=id %}
+{% elsif include.id == bilibili_av %}
+    {% assign id = include.id | replace:bilibili_av, "" %}
+    {% include video_bilibili_av.html id=id %}
+{% endif %}

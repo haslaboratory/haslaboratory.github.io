@@ -1,0 +1,10 @@
+<div class="content">
+    <a class="title is-4" href="/tags/#featured">Featured Posts</a>
+    <ul>
+        {% for post in site.tags.Featured limit:5 %}
+        <li>
+            <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

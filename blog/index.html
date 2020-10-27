@@ -1,0 +1,27 @@
+---
+title: Blog
+layout: bulma
+---
+
+{% include bulma_navbar.html %}
+
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <h1 class="title">{{page.title}}</h1>
+        </div>
+        {% include bulma_pagination.html paginator=paginator %}
+        <div class="content">
+            <div class="columns is-multiline">
+                {% for post in paginator.posts %}
+                <div class="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                    {% include bulma_post_card.html post=post %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% include bulma_pagination.html paginator=paginator %}
+    </div>
+</section>
+
+{% include bulma_footer.html %}

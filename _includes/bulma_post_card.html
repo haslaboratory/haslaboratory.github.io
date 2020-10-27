@@ -1,0 +1,20 @@
+<div class="card">
+    {% if include.post.image %}
+    <a class="card-image" href="{{ include.post.url }}">
+        <figure class="image is-16by9"
+            style="margin: 0;background-size: cover; background-position: center center; background-image: url({{ include.post.image }});">
+        </figure>
+    </a>
+    {% endif %}
+    <div class="card-content">
+        <div class="content">
+            <a class="title is-4" href="{{ include.post.url }}">
+                {{ include.post.title }}
+            </a>
+            {{ include.post.excerpt }}
+            <time>
+                {{ include.post.date | date: '%Y %b %d' }}
+            </time>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<nav class="pagination is-left">
+    {% if include.paginator.previous_page %}
+    <a class="pagination-previous" href="{{ include.paginator.previous_page_path }}">Previous</a>
+    {% else %}
+    <a class="pagination-previous" disabled>Previous</a>
+    {% endif %}
+    {% if include.paginator.next_page %}
+    <a class="pagination-next" href="{{ include.paginator.next_page_path }}">Next page</a>
+    {% else %}
+    <a class="pagination-next" disabled>Next page</a>
+    {% endif %}
+    <ul class="pagination-list" style="list-style: none; margin-left: 0;">
+        {% assign start = include.paginator.page | divided_by: 5 | times: 5 | at_least: 1 %}
+        {% assign end  = start | plus: 5 | at_most: include.paginator.total_pages %}
+
+        {% if start == end %}
+        {% assign start = start | minus: 5 | at_least: 1 %}
+        {% endif %}
+
+        {% if start > 1 %}
+
+        {% assign previous_start = start | minus: 5 | at_least: 1 %}
+
+        {% if previous_start == 1 %}
+        <li>
+            <a class="pagination-link"
+                href="{{ site.paginate_path | relative_url | replace: ':num', '' | | replace:'//','/'}}">{{ previous_start }}</a>
+        </li>
+        {% elsif previous_start > 1 %}
+        <li>
+            <a class="pagination-link"
+                href="{{ site.paginate_path | relative_url | replace: ':num', previous_start }}">{{ previous_start }}</a>
+        </li>
+        {% endif %}
+
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+
+        {% endif %}
+
+        {% for page in (start..end) %}
+        <li>
+            {% if page == include.paginator.page %}
+            <a class="pagination-link is-current">{{ page }}</a>
+            {% elsif page == 1 %}
+            <a class="pagination-link"
+                href="{{ site.paginate_path | relative_url | replace: ':num', '' | | replace:'//','/'}}">{{ page }}</a>
+            {% else %}
+            <a class="pagination-link"
+                href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
