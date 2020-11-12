@@ -1,0 +1,18 @@
+<div class="card" id="{{ include.member.nick }}">
+    <div class="card-content">
+        <div class="media">
+            <div class="media-left">
+                <figure class="image is-96x96">
+                    {% avatar user=include.member.github size=96 %}
+                </figure>
+            </div>
+            <div class="media-content">
+                <p class="title is-4">{{ include.member.name }}</p>
+                <p class="subtitle is-6">@{{ include.member.github }}</p>
+            </div>
+        </div>
+        <div class="content">
+            {{ include.member.description }}
+        </div>
+    </div>
+</div>

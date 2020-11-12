@@ -1,30 +1,30 @@
 - nick: janzhou
   name: 周健 (Jian Zhou)
   github: janzhou
-  degree: Doctor
+  degree: Advisor
   join: 2020
-  desc:
+  description:
 
 - nick: Premierpro
   name: 魏华辰 (Huachen Wei)
   github: Premierpro
   degree: Master
   join: 2020
-  desc:
+  description:
 
 - nick: MagnetSaki
   name: 吴剑峰 (Jianfeng Wu)
   github: MagnetSaki
   degree: Master
   join: 2020
-  desc:
+  description:
 
 - nick: virgilshi
   name: 施柳 (Liu Shi)
   github: virgilshi
   degree: Master
   join: 2020
-  desc:
+  description:
 
 - nick: wuqiulin1995
   name: 吴秋霖 (Qiulin Wu)
@@ -37,4 +37,4 @@
   github: huangweizhou
   degree: Doctor
   join: 2019
-  desc:
+  description:
