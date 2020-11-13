@@ -39,10 +39,17 @@
   degree: Doctor
   join: 2019
   description:
-  
+
 - nick: LonelyStrange
   name: 李蓉
   github: lrg11
   degree: undergraduate
   join: 2017
   description: I fall in love with learning of chip design and digital technology
+
+- nick: Small7-1999
+  name: 周子淇 (Ziqi Zhou)
+  github: Small7-1999
+  degree: undergraduate
+  join: 2017
+  description:
