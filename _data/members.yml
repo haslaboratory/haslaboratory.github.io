@@ -40,9 +40,9 @@
   join: 2019
   description:
   
-  -nick:LonelyStrange
-   name:李蓉
-   github:lrg11
-   degree:undergraduate
-   join:2017
-   description:
+- nick: LonelyStrange
+  name: 李蓉
+  github: lrg11
+  degree: undergraduate
+  join: 2017
+  description: I fall in love with learning of chip design and digital technology
