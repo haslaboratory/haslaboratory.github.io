@@ -1,31 +1,28 @@
 ---
-
-layout: post
-title: CHERIvoke:Characterising Pointer Revocation using CHERI Capabilities for Temporal Memory Safety
+title: Characterising Pointer Revocation using CHERI Capabilities for Temporal Memory Safety
 author: Jianfeng Wu
 tags:
  - temporal safety
  - use-after-free
  - architecture
  - security
-
 ---
 
-# CHERIvoke
+本文在新兴的CHERI体系结构扩展上，以低开销实现内存时间安全。
 
----
-
-## 动机
-
-在新兴的CHERI体系结构扩展上，以低开销实现内存时间安全。
+[CHERIvoke](https://www.cl.cam.ac.uk/~tmj32/papers/docs/xia19-micro.pdf) [Poster](https://www.cl.cam.ac.uk/~sa614/posters/cherivoke.pdf)
 
 ## 背景
 
 ### 1. 时间安全漏洞
 
-内存块被释放后，其对应的指针没有被设置为NULL，但是在它下一次使用之前，有代码对这块内存行了修改，那么当程序再次使用这块内存时，就很有可能会出现安全性问题。
+内存块被释放后，其对应的指针没有被设置为NULL，这个指针就被悬空了，形成了悬空指针（Dangling Pointer）。在它下一次使用之前，有其它代码对这块内存行了修改，那么当程序再次使用这块内存时，就很有可能会出现安全性问题。
 
-### 2. CHERI(Capability Hardware Enhanced RISC Instructions)
+![Use After Free](/images/2020-11-16-use-after-free.jpg)
+
+为了避免出现悬空指针，需要在释放内存时将指针置为NULL。访问指针变量前，先判断是否为NULL，可以避免出现上述安全漏洞。但是当多个指针指向同一个内存块，就需要将所有指针变量的值都置为NULL。这就需要维护相应的元数据，开销会非常大。
+
+### 2. [CHERI](https://murdoch.is/papers/cl14cheriisa.pdf) (Capability Hardware Enhanced RISC Instructions)
 
 一种新的体系结构扩展，其中指针被扩展为原来的两倍大小(称为Capability)，扩展部分用于记录引用地址范围及权限等。
 
