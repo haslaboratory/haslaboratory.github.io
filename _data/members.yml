@@ -1,4 +1,4 @@
-- nick: janzhou
+- nick: jian-zhou
   name: 周健 (Jian Zhou)
   github: janzhou
   degree: Advisor
@@ -12,14 +12,14 @@
   join: 2020
   description:
 
-- nick: MagnetSaki
+- nick: jianfeng-wu
   name: 吴剑峰 (Jianfeng Wu)
   github: MagnetSaki
   degree: Master
   join: 2020
   description:
 
-- nick: virgilshi
+- nick: liu-shi
   name: 施柳 (Liu Shi)
   github: virgilshi
   degree: Master
@@ -39,10 +39,32 @@
   degree: Doctor
   join: 2019
   description:
+
+- nick: LonelyStrange
+  name: 李蓉
+  github: lrg11
+  degree: undergraduate
+  join: 2017
+  description: I fall in love with learning of chip design and digital technology
+
+- nick: ziqi-zhou
+  name: 周子淇 (Ziqi Zhou)
+  github: Small7-1999
+  degree: undergraduate
+  join: 2017
+  description:
+
+- nick: zzdkirov
+  name: 张正狄 (Zhang Zhengdi)
+  github: zzdkirov
+  degree: undergraduate
+  join: 2017
+  description:
+
+- nick: TianQiLin666666
+  name: 田麒麟 (Qilin Tian)
+  github: TianQiLin666666
+  degree: undergraduate
+  join: 2017
+  description:
   
-  -nick:LonelyStrange
-   name:李蓉
-   github:lrg11
-   degree:undergraduate
-   join:2017
-   description:

@@ -1,7 +1,6 @@
 ---
-layout: post
 title: Hello World!
-author: janzhou
+author: Jian Zhou
 tags:
     - Hello World
 ---
