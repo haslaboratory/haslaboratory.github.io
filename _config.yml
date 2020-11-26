@@ -4,6 +4,10 @@ permalink: /:year/:month/:day/:title:output_ext
 exclude: [project, src, build.sbt, CNAME, LICENSE, README.md]
 
 collections:
+collections:
+  guide:
+    title: 科研指南
+    output: true
 
 jekyll-archives:
   enabled: all

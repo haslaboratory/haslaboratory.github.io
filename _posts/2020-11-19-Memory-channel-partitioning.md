@@ -16,9 +16,9 @@ tags:
 
 以memory-intensity和row-buffer hit ratio作为应用特征衡量，作者做了两组实验，示意图如下，以阐述应用间干扰问题。
 1）memory-intensity
-![image](../images/memory-intensity.png)
+![image](/images/2020-11-19-memory-intensity.png)
 2）row-buffer hit ratio
-![image](../images/row-buffer-hit.png)
+![image](/images/2020-11-19-row-buffer-hit.png)
 
 ## 设计
 作者提出了两个设计，内存通道分区机制，和将此机制与调度器结合。
