@@ -19,7 +19,7 @@
   join: 2020
   description:
 
-- nick: virgilshi
+- nick: liu-shi
   name: 施柳 (Liu Shi)
   github: virgilshi
   degree: Master
@@ -47,7 +47,7 @@
   join: 2017
   description: I fall in love with learning of chip design and digital technology
 
-- nick: Small7-1999
+- nick: ziqi-zhou
   name: 周子淇 (Ziqi Zhou)
   github: Small7-1999
   degree: undergraduate
@@ -57,6 +57,13 @@
 - nick: zzdkirov
   name: 张正狄 (Zhang Zhengdi)
   github: zzdkirov
+  degree: undergraduate
+  join: 2017
+  description:
+
+- nick: TianQiLin666666
+  name: 田麒麟 (Qilin Tian)
+  github: TianQiLin666666
   degree: undergraduate
   join: 2017
   description:

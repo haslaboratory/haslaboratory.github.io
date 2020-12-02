@@ -1,5 +1,5 @@
 ---
-title: Characterising Pointer Revocation using CHERI Capabilities for Temporal Memory Safety
+title: 利用CHERI扩展实现内存时间安全
 author: Jianfeng Wu
 tags:
  - temporal safety
@@ -10,7 +10,7 @@ tags:
 
 本文在新兴的CHERI体系结构扩展上，以低开销实现内存时间安全。
 
-[CHERIvoke](https://www.cl.cam.ac.uk/~tmj32/papers/docs/xia19-micro.pdf) [Poster](https://www.cl.cam.ac.uk/~sa614/posters/cherivoke.pdf)
+[CHERIvoke: Characterising Pointer Revocation using CHERI Capabilities for Temporal Memory Safety](https://www.cl.cam.ac.uk/~tmj32/papers/docs/xia19-micro.pdf) ([Poster](https://www.cl.cam.ac.uk/~sa614/posters/cherivoke.pdf))
 
 ## 背景
 
