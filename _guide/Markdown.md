@@ -1,10 +1,8 @@
-```
 ---
 layout: collection
 title: 如何使用Markdown?
 order: 204
 ---
-```
 
 ## Markdown使用语法如下：
 
