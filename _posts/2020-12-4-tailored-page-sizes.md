@@ -4,13 +4,16 @@ author: Weizhou Huang
 tags:
  - virtual memory
  - huge pages
+ - ISCA
+ - 2019
 ---
 
 # Tailored Page Sizes
-
-[文章来源](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9138990) 
-
 本文通过修改PTE格式和TLB硬件缓存实现了任意大小($\geq$ 4KB)的内存页映射
+
+[文章来源](https://conferences.computer.org/isca/pdfs/ISCA2020-4QlDegUf3fKiwUXfV0KdCm/466100a900/466100a900.pdf) 
+
+
 
 ## 背景和问题：
 Linux虚拟内存机制将虚拟地址到物理地址的映射信息以PTE的形式记录在页表中，TLB会缓存一部分热的PTE以加速地址转换过程。在执行内存地址转换时，若TLB缓存未命中，则需要读取内存中的多级页表，以获取相应的PTE中的物理地址。此外，TLB一般分为两级，一级TLB加速的效果明显高于二级，但是一级TLB的容量相对较小。
@@ -29,8 +32,8 @@ Linux虚拟内存机制将虚拟地址到物理地址的映射信息以PTE的形
 
 
 **TPS的设计思想：**
-查PTE的第20-12位
-如图2所示，当内存页映射大小每翻一倍，其对应的PFN号所需要的比特数减少一位，因此可以通过检查PTE的第20-12位中有多少位用于表示PFN就可以判断这个PTE表示的页映射尺寸（仅限于4B-2MB范围的映射大小)。相当于复用了[PTE](https://www.kernel.org/doc/gorman/html/understand/understand006.html)的20-12位记录页映射的尺寸。
+[PTE](https://www.kernel.org/doc/gorman/html/understand/understand006.html)的第20-12位用于索引页表中一个4KB页映射对应的条目。
+如图2所示，当内存页映射大小每翻一倍，其对应的PFN号所需要的比特数减少一位，因此可以通过检查PTE的第20-12位中有多少位用于表示PFN就可以判断这个PTE表示的页映射尺寸（仅限于4KB-2MB范围的映射大小)。相当于复用了PTE的20-12位记录页映射的尺寸。
 
 基于上述设计思想，对于特殊尺寸的页映射（非4KB，2MB），只需使用PTE的一位保留位（第63位）标记出来即可实现TPS。
 
