@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Translation Ranger：针对连续性感知TLB的操作系统支持
+title: Translation Ranger Operating System Support for Contiguity-Aware TLBs
 author: Weizhou Huang
 tags:
  - ISCA
@@ -10,9 +10,7 @@ tags:
  - TLB
 ---
 
-# Translation Ranger: Operating System Support for Contiguity-Aware TLBs
-
-[文章来源](https://www.cs.yale.edu/homes/abhishek/ziyan-isca19.pdf) 
+# [Translation Ranger: Operating System Support for Contiguity-Aware TLBs](https://www.cs.yale.edu/homes/abhishek/ziyan-isca19.pdf) 
 
 本文提供了一种通过迁移物理内存页来生成连续性映射的机制，用于提升连续性感知的TLB生成大页映射的概率，以提升TLB缓存和内存地址转换效率。
 
