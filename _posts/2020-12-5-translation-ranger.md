@@ -19,7 +19,7 @@ tags:
 相比于传统TLB，新型的连续性感知的TLB可以用过将多个4KB映射为条目合并成为一个，使一个条目覆盖的内存段大小远超传统TLB，从而减少映射条目数量，增加TLB命中率。
 
 <center>
-<img src="../images/contiguity-aware_TLB.png" width="70%" />
+<img src="../images/translation-ranger-contiguity-aware_TLB.png" width="70%" />
 
 图 1  连续性感知的TLB
 </center>
@@ -36,7 +36,7 @@ tags:
 
 
 <center>
-<img src="../images/对比.png" width="100%"  />
+<img src="../images/translation-ranger-对比.png" width="100%"  />
 
 表 1  现有相关工作的局限性
 </center>
@@ -66,7 +66,7 @@ tags:
 
 
 <center>
-<img src="../images/物理页迁移.png" width="75%" />
+<img src="../images/translation-ranger-物理页迁移.png" width="75%" />
 
 图 2  Translation Ranger工作原理
 </center>
