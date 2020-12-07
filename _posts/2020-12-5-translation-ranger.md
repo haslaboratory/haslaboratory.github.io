@@ -1,10 +1,13 @@
 ---
+layout: post
 title: Translation Ranger：针对连续性感知TLB的操作系统支持
 author: Weizhou Huang
 tags:
- - virtual memory
- - huge pages
- - TLB miss
+ - ISCA
+ - 2019
+ - Virtual memory
+ - Huge pages
+ - TLB
 ---
 
 # Translation Ranger: Operating System Support for Contiguity-Aware TLBs

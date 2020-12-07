@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 利用CHERI扩展实现内存时间安全
 author: Jianfeng Wu
 tags:
