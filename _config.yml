@@ -1,6 +1,6 @@
 title: HAS-LAB
 description: The computer world is a world of dialect.
-permalink: /:year/:month/:day/:title:output_ext
+permalink: /:year/:title:output_ext
 exclude: [project, src, build.sbt, CNAME, LICENSE, README.md]
 
 collections:
