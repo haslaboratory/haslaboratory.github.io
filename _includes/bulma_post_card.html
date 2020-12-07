@@ -11,10 +11,10 @@
             <a class="title is-4" href="{{ include.post.url }}">
                 {{ include.post.title }}
             </a>
-            {{ include.post.excerpt }}
-            <time>
-                {{ include.post.date | date: '%Y %b %d' }}
-            </time>
+            <!--{{ include.post.excerpt }}-->
+            <p>
+                <time>{{ include.post.date | date: '%Y %b %d' }}</time>
+            </p>
         </div>
     </div>
 </div>
