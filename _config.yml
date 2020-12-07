@@ -22,7 +22,7 @@ jekyll-archives:
 paginate: 12
 paginate_path: /blog/:num/
 
-gems:
+plugins:
   - jekyll-avatar
   - jekyll-coffeescript
   - jekyll-feed
