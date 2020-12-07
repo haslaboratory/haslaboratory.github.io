@@ -1,19 +1,17 @@
 ---
-title: 定制尺寸的内存页映射
+layout: post
+title: Tailored Page Sizes
 author: Weizhou Huang
 tags:
- - virtual memory
- - huge pages
  - ISCA
- - 2019
+ - 2020
+ - Virtual memory
+ - Huge pages
 ---
 
-# Tailored Page Sizes
+# [Tailored Page Sizes](https://conferences.computer.org/isca/pdfs/ISCA2020-4QlDegUf3fKiwUXfV0KdCm/466100a900/466100a900.pdf)
+
 本文通过修改PTE格式和TLB硬件缓存实现了任意大小($\geq$ 4KB)的内存页映射
-
-[文章来源](https://conferences.computer.org/isca/pdfs/ISCA2020-4QlDegUf3fKiwUXfV0KdCm/466100a900/466100a900.pdf) 
-
-
 
 ## 背景和问题：
 Linux虚拟内存机制将虚拟地址到物理地址的映射信息以PTE的形式记录在页表中，TLB会缓存一部分热的PTE以加速地址转换过程。在执行内存地址转换时，若TLB缓存未命中，则需要读取内存中的多级页表，以获取相应的PTE中的物理地址。此外，TLB一般分为两级，一级TLB加速的效果明显高于二级，但是一级TLB的容量相对较小。

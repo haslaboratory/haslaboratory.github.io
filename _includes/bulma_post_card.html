@@ -8,13 +8,12 @@
     {% endif %}
     <div class="card-content">
         <div class="content">
-            <a class="title is-4" href="{{ include.post.url }}">
+            <a class="title is-6" href="{{ include.post.url }}">
                 {{ include.post.title }}
             </a>
-            {{ include.post.excerpt }}
-            <time>
-                {{ include.post.date | date: '%Y %b %d' }}
-            </time>
+            <p>
+                <time class="is-size-7">{{ include.post.date | date: '%Y %b %d' }}</time>
+            </p>
         </div>
     </div>
 </div>
