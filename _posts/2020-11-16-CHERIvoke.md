@@ -2,10 +2,9 @@
 title: 利用CHERI扩展实现内存时间安全
 author: Jianfeng Wu
 tags:
- - temporal safety
- - use-after-free
- - architecture
- - security
+ - Micro
+ - 2019
+ - Security
 ---
 
 本文在新兴的CHERI体系结构扩展上，以低开销实现内存时间安全。
@@ -18,7 +17,7 @@ tags:
 
 内存块被释放后，其对应的指针没有被设置为NULL，这个指针就被悬空了，形成了悬空指针（Dangling Pointer）。在它下一次使用之前，有其它代码对这块内存行了修改，那么当程序再次使用这块内存时，就很有可能会出现安全性问题。
 
-![Use After Free](/images/2020-11-16-use-after-free.jpg)
+![Use After Free](../images/2020-11-16-use-after-free.jpg)
 
 为了避免出现悬空指针，需要在释放内存时将指针置为NULL。访问指针变量前，先判断是否为NULL，可以避免出现上述安全漏洞。但是当多个指针指向同一个内存块，就需要将所有指针变量的值都置为NULL。这就需要维护相应的元数据，开销会非常大。
 

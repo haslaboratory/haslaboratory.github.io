@@ -2,13 +2,12 @@
 title: 利用应用感知的内存通道分区降低多核系统的内存干扰
 author: Liu Shi
 tags:
-    - memory paritioning
-    - Multicore system
+    - Micro
+    - 2011
+    - Multicore
 ---
 
-# Reducing Memory Interference in Multicore Systems via Application-Aware Memory Channel Partitioning 
-
-[文章来源](https://people.inf.ethz.ch/omutlu/pub/memory-channel-partitioning-micro11.pdf)
+[Reducing Memory Interference in Multicore Systems via Application-Aware Memory Channel Partitioning](https://people.inf.ethz.ch/omutlu/pub/memory-channel-partitioning-micro11.pdf)
 
 ## 背景和问题
 
