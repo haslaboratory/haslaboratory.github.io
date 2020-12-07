@@ -17,7 +17,7 @@ permalink: /tags/
     {% assign tag = item | split: '#' %}
     <div class="control">
         <a href="#{{ tag[1] | slugify }}" class="tags has-addons">
-            <span class="tag is-dark"><span class="icon"><i class="fas fa-tags"></i></span>&nbsp;{{ tag[2] }}</span>
+            <span class="tag is-dark"><span class="icon"><i class="fas fa-hashtag"></i></span>&nbsp;{{ tag[2] }}</span>
             <span class="tag is-info">{{ tag[1] }}</span>
         </a>
     </div>
@@ -25,7 +25,7 @@ permalink: /tags/
 </div>
 
 {% for tag in site.tags %}
-<h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+<h2 id="{{ tag[0] | downcase | slugify }}">{{ tag[0] }}</h2>
 <div class="columns is-multiline">
     {% for post in tag[1] %}
     <div class="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
