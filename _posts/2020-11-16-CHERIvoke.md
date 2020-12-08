@@ -20,8 +20,6 @@ tags:
 - [3 实验](#3-实验)
   - [3.1 实验设置](#31-实验设置)
   - [3.2 实验结果](#32-实验结果)
-    - [3.2.1 整体评估](#321-整体评估)
-    - [3.2.2 开销细分](#322-开销细分)
 - [4 相关工作](#4-相关工作)
   - [4.1 撤销技术](#41-撤销技术)
   - [4.2 页表技术](#42-页表技术)
@@ -74,7 +72,7 @@ tags:
 
 ### 3.1 实验设置
 
-- 系统参数</br><div style="align: center"><img alt="System Config" src="../images/CHERIvoke/2020-12-07-SystemConfig.png" width="400x"></div>
+- 系统参数： </br> <div style="align: center"><img alt="System Config" src="../images/CHERIvoke/2020-12-07-SystemConfig.png" width="400x"></div>
 - 分配器：dlmalloc_cherivoke。
 - 工作负载：dealII、omnetpp、xalancbmk（分配操作多）;
     SPEC CPU2006（通用）。
@@ -98,28 +96,16 @@ tags:
 
 ### 4.1 撤销技术
 
-<details>
-<summary>展开查看</summary>
-
-不使用硬件功能的撤销技术包括[DangSan](https://dl.acm.org/doi/pdf/10.1145/3064176.3064211)、[DangNull](https://www.cs.ucr.edu/~csong/ndss15-dangnull.pdf)、[FreeSentry](https://www.ndss-symposium.org/wp-content/uploads/2017/09/03_4_2.pdf)和[PSweeper](https://dl.acm.org/doi/pdf/10.1145/3243734.3243826)。它们使用编译器来消除指针与数据之间的歧义，每次创建指针时添加代码以插入指针到分配列表，并在数据释放时取消所有条目。但是，这种分配列表对性能和存储非常敏感，使得这些技术不适用于分配量大的工作负载。另外，指针可以被隐藏，所以这种技术不能保证时间安全性。<br>
-使用CHERI，通过使用1位标签元数据，我们可以在运行时消除指针的歧义，而不需要任何额外的元数据。这意味着我们可以遍历内存以置空任何悬浮指针，从而避免与这种复杂元数据相关的内存、性能开销。它还意味着不需要涉及编译器:惟一需要做的更改是让free方法添加隔离列表。CHERI还天生防止隐藏指针，因此可以保证时间安全。<br>
-像CHERIvoke一样，[BOGO](https://dl.acm.org/doi/pdf/10.1145/3297858.3304017)在通过Intel MPX空间安全的基础上构建了时间安全。由于缺乏用于批处理的隔离缓冲区以及复杂的MPX表结构，BOGO的开销明显高于CHERIvoke:在SPEC CPU2006上，CHERIvoke的平均开销为4.7%，最坏情况为50%，而BOGO的平均开销为60%，最坏情况为1616%。
-</details>
+- 不使用硬件功能的撤销技术包括[DangSan](https://dl.acm.org/doi/pdf/10.1145/3064176.3064211)、[DangNull](https://www.cs.ucr.edu/~csong/ndss15-dangnull.pdf)、[FreeSentry](https://www.ndss-symposium.org/wp-content/uploads/2017/09/03_4_2.pdf)和[PSweeper](https://dl.acm.org/doi/pdf/10.1145/3243734.3243826)。它们使用编译器来消除指针与数据之间的歧义，每次创建指针时添加代码以插入指针到分配列表，并在数据释放时取消所有条目。但是，这种分配列表对性能和存储非常敏感，使得这些技术不适用于分配量大的工作负载。另外，指针可以被隐藏，所以这种技术不能保证时间安全性。
+- 使用CHERI，通过使用1位标签元数据，我们可以在运行时消除指针的歧义，而不需要任何额外的元数据。这意味着我们可以遍历内存以置空任何悬浮指针，从而避免与这种复杂元数据相关的内存、性能开销。它还意味着不需要涉及编译器:惟一需要做的更改是让free方法添加隔离列表。CHERI还天生防止隐藏指针，因此可以保证时间安全。
+- 像CHERIvoke一样，[BOGO](https://dl.acm.org/doi/pdf/10.1145/3297858.3304017)在通过Intel MPX空间安全的基础上构建了时间安全。由于缺乏用于批处理的隔离缓冲区以及复杂的MPX表结构，BOGO的开销明显高于CHERIvoke:在SPEC CPU2006上，CHERIvoke的平均开销为4.7%，最坏情况为50%，而BOGO的平均开销为60%，最坏情况为1616%。
 
 ### 4.2 页表技术
 
-<details>
-<summary>展开查看</summary>
-
-通过在页表的粒度上进行保护，可以通过释放空闲的内存区域来防止使用悬挂指针。Dhurjati和Adve扩展了[这项技术](http://llvm.org/pubs/2006-DSN-DanglingPointers.pdf)，允许重用底层物理地址。Dang等人提供了[Oscar](https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-dang.pdf)，它更好地支持并发常见的工作负载。<br>
-当分配很大时，页面粒度可以实现较低的开销。然而，频繁的小内存分配会导致性能和内存开销大幅增加，因为每个分配都必须有自己的虚拟页，同时增加TLB压力，导致显著的速度下降。
-</details>
+- 通过在页表的粒度上进行保护，可以通过释放空闲的内存区域来防止使用悬挂指针。Dhurjati和Adve扩展了[这项技术](http://llvm.org/pubs/2006-DSN-DanglingPointers.pdf)，允许重用底层物理地址。Dang等人提供了[Oscar](https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-dang.pdf)，它更好地支持并发常见的工作负载。
+- 当分配很大时，页面粒度可以实现较低的开销。然而，频繁的小内存分配会导致性能和内存开销大幅增加，因为每个分配都必须有自己的虚拟页，同时增加TLB压力，导致显著的速度下降。
 
 ### 4.3 标记内存
 
-<details>
-<summary>展开查看</summary>
-
-CHERI只是使用标记内存来作为改进系统安全性或调试特性的一种方法。标记内存的其他用途包括注释地址有效性、版本号、对象类型和所有权。虽然CHERI仅对每个CHERI指针对齐的区域使用一个位，但其他技术可能使用多个位来提供内存版本控制，包括[SPARC ADI](https://www.oracle.com/technetwork/server-storage/sun-sparc-enterprise/documentation/sparc-t7-m7-server-architecture-2702877.pdf)和[Arm MTE](https://community.arm.com/developer/ip-products/processors/b/processors-ip-blog/posts/arm-a-profile-architecture-2018-developments-armv85a)。<br>
-[CETS](https://dl.acm.org/doi/pdf/10.1145/1837855.1806657)使用等字长的唯一标签进行内存访问，因此，如果标签与分配的区域不匹配，则内存访问将失败。这意味着其指针大小与CHERI的一样大，但是同时由于指针隐藏会遭受较大的假阳性率。与CHERI不同，CETS不能保证空间安全，而且它没有硬件支持，这会导致严重的性能损失。[Watchdog](https://www.cis.upenn.edu/~stevez/papers/NMZ12.pdf)使用唯一的指针和分配标识符来提供硬件的时间安全性，对于Watchdog和CHERIvoke之间的共同基准，Watchdog支付的平均开销为17％，而CHERIvoke支付的开销不到1％。
-</details>
+- CHERI只是使用标记内存来作为改进系统安全性或调试特性的一种方法。标记内存的其他用途包括注释地址有效性、版本号、对象类型和所有权。虽然CHERI仅对每个CHERI指针对齐的区域使用一个位，但其他技术可能使用多个位来提供内存版本控制，包括[SPARC ADI](https://www.oracle.com/technetwork/server-storage/sun-sparc-enterprise/documentation/sparc-t7-m7-server-architecture-2702877.pdf)和[Arm MTE](https://community.arm.com/developer/ip-products/processors/b/processors-ip-blog/posts/arm-a-profile-architecture-2018-developments-armv85a)。
+- [CETS](https://dl.acm.org/doi/pdf/10.1145/1837855.1806657)使用等字长的唯一标签进行内存访问，因此，如果标签与分配的区域不匹配，则内存访问将失败。这意味着其指针大小与CHERI的一样大，但是同时由于指针隐藏会遭受较大的假阳性率。与CHERI不同，CETS不能保证空间安全，而且它没有硬件支持，这会导致严重的性能损失。[Watchdog](https://www.cis.upenn.edu/~stevez/papers/NMZ12.pdf)使用唯一的指针和分配标识符来提供硬件的时间安全性，对于Watchdog和CHERIvoke之间的共同基准，Watchdog支付的平均开销为17％，而CHERIvoke支付的开销不到1％。
