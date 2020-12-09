@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Perforated Page Supporting Fragmented MemoryAllocation for Large Pages
+title: Perforated Page Supporting Fragmented Memory Allocation for Large Pages
 author: Weizhou Huang
 tags:
  - 2020
@@ -9,7 +9,7 @@ tags:
  - Huge pages
 ---
 
-# [Perforated Page: Supporting Fragmented Memory Allocation for Large Pages]() 
+# [Perforated Page: Supporting Fragmented Memory Allocation for Large Pages](https://ieeexplore.ieee.org/document/9138951) 
 
 本文提出perforated page以解决传统机制无法生成物理大页的情况。
 
