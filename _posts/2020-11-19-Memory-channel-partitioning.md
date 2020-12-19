@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 利用应用感知的内存通道分区降低多核系统的内存干扰
+title: "Memory Channel Partition: 利用内存通道分区降低核间干扰"
 author: Liu Shi
 tags:
     - Micro

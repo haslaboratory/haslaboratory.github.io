@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Translation Ranger Operating System Support for Contiguity-Aware TLBs
+title: "Translation Ranger: Operating System Support for Contiguity-Aware TLBs"
 author: Weizhou Huang
 tags:
  - ISCA
