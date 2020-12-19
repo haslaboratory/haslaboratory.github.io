@@ -1,6 +1,6 @@
 ---
 layout: collection
-title: SSH使用方法
+title: 如何使用SSH？
 order: 203
 ---
 
