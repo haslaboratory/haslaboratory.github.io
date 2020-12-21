@@ -4,6 +4,8 @@ title: 如何使用Jekyll？
 order: 205
 ---
 
+本站使用[Jekyll](https://jekyllrb.com/)生成。若要进行本地调试请参考以下文档安装。
+
 # Jekyll使用方法
 
 &nbsp;&nbsp;一种简单静态博客生成器，用于将纯文本转换为静态博客网站。
@@ -52,6 +54,47 @@ order: 205
   - `sudo apt install python`
 - 下载Jekyll和bundler
   - `sudo gem install jekyll bundler`
+
+若无管理员权限，可安装至用户目录：
+
+```bash
+gem install --user-install bundler jekyll
+```
+
+安装至用户目录后需要在``~/.profile``中添加路径：
+
+```bash
+if [ -d "$HOME/.gem/ruby/2.7.0/bin" ] ; then
+    PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+fi
+```
+
+若安装过程出现如下错误，则需要安装ruby开发者版本（``sudo apt install ruby-dev``）：
+
+```
+mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
+
+You might have to install separate package for the ruby development
+environment, ruby-dev or ruby-devel for example.
+
+extconf failed, exit code 1
+```
+
+### 安装依赖
+
+对本网站进行本地编译前还需要通过``bundle``命令安装相应的依赖包。如果没有权限，需要提前指定安装依赖包至用户目录：
+
+```bash
+bundle config set --local path ~/.gem
+```
+
+安装依赖包的命令非常简单：
+
+```bash
+bundle install
+```
+
+最后，可通过``bundle exec jekyll serve``命令启动本地调试。若遇端口占用，通过参数``--port=[PORT]``修改；若需远程访问，通过参数修改``--host=[HOST]``。
 
 ## 2. 快速开始
 
