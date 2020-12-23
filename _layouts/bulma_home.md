@@ -22,7 +22,7 @@ layout: bulma
                 <aside class="menu">
                     <p class="menu-label">最新文章</p>
                     <ul class="menu-list">
-                        {% for post in site.posts limit: 20 %}
+                        {% for post in site.posts limit: 10 %}
                         <li>
                             <a href="{{ site.baseurl }}{{ post.url }}">
                                 {{ post.title }}
