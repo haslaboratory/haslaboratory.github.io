@@ -1,7 +1,7 @@
 ---
 layout: collection
 title: 如何使用Jekyll？
-order: 205
+order: 901
 ---
 
 本站使用[Jekyll](https://jekyllrb.com/)生成。若要进行本地调试请参考以下文档安装。

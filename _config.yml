@@ -5,8 +5,8 @@ exclude: [project, src, build.sbt, CNAME, LICENSE, README.md]
 
 collections:
 collections:
-  guide:
-    title: 科研指南
+  docs:
+    title: 全部文档
     output: true
 
 jekyll-archives:
