@@ -36,7 +36,7 @@ order: 901
   - 官方网址 (https://www.python.org)
   - 笔者使用的是python-3.9.0-amd64 ([点此下载](https://www.python.org/ftp/python/3.9.0/python-3.9.0-amd64.exe))
   - 需要在安装过程中将Python加入路径  
-    <div style="align: center"><img alt="Python Install" src="../images/Jekyll/2020-12-08-python_install.png" width="226x"></div>
+    <div style="align: center"><img alt="Python Install" src="../../images/Jekyll/2020-12-08-python_install.png" width="226x"></div>
 - 下载Jekyll和bundler
   - 启动命令行窗口 (Win+R，输入cmd后确定)
   - `gem install jekyll bundler`
@@ -105,12 +105,12 @@ bundle install
 - `bundle exec jekyll serve`
   - 在本地预览服务中编译站点，可以通过默认网址 [localhost:4000](http://localhost:4000) 访问。若想要后台运行，可以添加 --detach。
 - 示例博客首页：  
-  <div style="align: center"><img alt="Jekyll Example" src="../images/Jekyll/2020-12-08-jekyll_example.png" width="400x"></div>
+  <div style="align: center"><img alt="Jekyll Example" src="../../images/Jekyll/2020-12-08-jekyll_example.png" width="400x"></div>
 
 ## 3. 目录结构
 
 - Jekyll 的目录结构一般是这个样子：  
-  <div style="align: center"><img alt="Structure" src="../images/Jekyll/2020-12-08-structure.png" width="400x"></div>
+  <div style="align: center"><img alt="Structure" src="../../images/Jekyll/2020-12-08-structure.png" width="400x"></div>
 
 
 | 文件/文件夹  |    说明    | 
