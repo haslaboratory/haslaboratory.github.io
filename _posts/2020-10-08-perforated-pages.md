@@ -3,8 +3,8 @@ layout: post
 title: "Perforated Page: Supporting Fragmented Memory Allocation for Large Pages"
 author: Weizhou Huang
 tags:
- - 2020
  - ISCA
+ - 2020
  - Virtual memory
  - Huge pages
 ---
