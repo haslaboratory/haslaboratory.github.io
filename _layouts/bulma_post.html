@@ -4,24 +4,19 @@ layout: bulma
 
 {% include bulma_navbar.html %}
 
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">{{page.title}}</h1>
+            {% include bulma_post_tags.html %}
+        </div>
+    </div>
+</section>
+
 <div class="columns is-centered">
-    <div class="column is-half-widescreen is-three-quarters-desktop">
+    <div class="column is-three-quarters-desktop">
         <section class="section">
             <div class="container">
-                {% if page.image %}
-                <section class="hero" style="margin-top: -2em;margin-bottom: 1em;">
-                    <figure class="image is-16by9"
-                        style="background-size: cover; background-position: center center; background-image: url({{ page.image }});">
-                        <div class="box" style="background-color:rgba(0, 0, 0, 0.5);">
-                            <h1 class="title is-size-5-mobile has-text-white">{{page.title}}</h1>
-                            {% include bulma_post_tags.html %}
-                        </div>
-                    </figure>
-                </section>
-                {% else %}
-                <h1 class="title">{{page.title}}</h1>
-                {% include bulma_post_tags.html %}
-                {% endif %}
                 <div class="content">
                     {{content}}
                 </div>
