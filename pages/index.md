@@ -13,3 +13,8 @@ permalink: /
 5. 键值（KV）数据库
 6. 分布式存储系统
 7. 大数据
+
+###### [团队新闻](/news.html)
+
+{% assign news = site.data.news | slice: 0, 5 %}
+{% include bulma_news.html news = news %}
