@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ShieldStore: Shielded In-memory Key-value Storage with SGX"
+title: "ShieldStore: 利用SGX技术保护内存键值(KV)数据库"
 author: Jianfeng Wu
 tags:
  - Eurosys

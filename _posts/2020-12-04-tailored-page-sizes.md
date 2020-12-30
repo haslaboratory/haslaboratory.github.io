@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tailored Page Sizes
+title: "Tailored Page Sizes: 处理器的可变页大小支持"
 author: Weizhou Huang
 tags:
  - ISCA

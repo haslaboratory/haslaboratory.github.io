@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nimble Page Management for Tiered Memory Systems
+title: "Nimble Page Management: 灵活管理异构内存"
 author: Weizhou Huang
 tags:
  - ASPLOS

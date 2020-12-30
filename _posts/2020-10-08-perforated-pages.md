@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Perforated Page: Supporting Fragmented Memory Allocation for Large Pages"
+title: "Perforated Page: 在大页内存中支持碎片化的内存分配"
 author: Weizhou Huang
 tags:
  - ISCA

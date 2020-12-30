@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Translation Ranger: Operating System Support for Contiguity-Aware TLBs"
+title: "Translation Ranger: 通过操作系统支持连续性感知的旁路转换缓存(TLB)"
 author: Weizhou Huang
 tags:
  - ISCA
