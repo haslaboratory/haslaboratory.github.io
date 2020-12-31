@@ -1,13 +1,15 @@
 <div class="menu">
+    {% if include.title %}
     <p class="menu-label">{{include.title}}</p>
+    {% endif %}
     <ul class="menu-list">
         {% assign section = true %}
         {% assign first = true %}
-        {% assign menus = site[include.collection] | sort: "order", "last" %}
+        {% assign menu = include.menu | sort: "order", "last" %}
 
-        {% for menu in menus %}
+        {% for link in menu %}
         {% if first %}
-            {% if menu.section %}
+            {% if link.section %}
                 <li>
             {% else %}
                 <li><ul><li>
@@ -15,13 +17,13 @@
             {% assign first = false %}
         {% else %}
             {% if section %}
-                {% if menu.section %}
+                {% if link.section %}
                     </li><li>
                 {% else %}
                     <ul><li>
                 {% endif %}
             {% else %}
-                {% if menu.section %}
+                {% if link.section %}
                     </li></ul></li><li>
                 {% else %}
                     </li><li>
@@ -29,9 +31,9 @@
             {% endif %}
         {% endif %}
 
-        <a class="{% if page.url == menu.url %}is-active{% endif %}" href="{{ menu.url }}">{{menu.title}}</a>
+        <a class="{% if page.url == link.url %}is-active{% endif %}" href="{{ link.url }}">{{link.title}}</a>
 
-        {% assign section = menu.section %}
+        {% assign section = link.section %}
         {% endfor %}
         {% if section %}
             </li>

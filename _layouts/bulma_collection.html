@@ -14,7 +14,9 @@ layout: bulma
             </div>
         </div>
         <div class="column">
-            {% include bulma_collection.html title="Collection" collection=page.collection %}
+            {% assign menu = site[page.collection] | sort: "order", "last" %}
+            {% assign collection = site.collections | where: "label", page.collection | first %}
+            {% include bulma_menu.html title=collection.title menu=menu %}
         </div>
     </div>
   </div>

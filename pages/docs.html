@@ -6,6 +6,7 @@ permalink: /docs/
 
 {% for collection in site.collections %}
 {% if collection.label != "posts" %}
-{% include bulma_collection.html title=collection.title collection=collection.label %}
+{% assign menu = site[collection.label] | sort: "order", "last" %}
+{% include bulma_menu.html title=collection.title menu=menu %}
 {% endif %}
 {% endfor %}

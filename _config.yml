@@ -4,9 +4,11 @@ permalink: /:year/:title:output_ext
 exclude: [project, src, build.sbt, CNAME, LICENSE, README.md]
 
 collections:
-collections:
   docs:
-    title: 全部文档
+    title: 文档
+    output: true
+  lectures:
+    title: 课程
     output: true
 
 jekyll-archives:
