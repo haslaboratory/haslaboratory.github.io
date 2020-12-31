@@ -9,10 +9,9 @@ tags:
  - Key-Value Store
 ---
 
-# ShieldStore: Shielded In-memory Key-value Storage with SGX
+# [ShieldStore: Shielded In-memory Key-value Storage with SGX](http://calab.kaist.ac.kr:8080/~jhuh/papers/kim_eurosys19_shieldst.pdf)
 
 在使用SGX的内存数据库中存在受SGX硬件保护区远小于数据库容量的问题，简单的paging机制会导致高额的开销。转而将主要数据加密后存放在非保护区域，加密元数据存放在保护区域。  
-[ShieldStore: Shielded In-memory Key-value Storage with SGX](http://calab.kaist.ac.kr:8080/~jhuh/papers/kim_eurosys19_shieldst.pdf)
 
 ---
   - [1. 背景](#1-背景)

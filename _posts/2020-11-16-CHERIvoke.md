@@ -8,10 +8,9 @@ tags:
  - Security
 ---
 
-# CHERIvoke: Characterising Pointer Revocation using CHERI Capabilities for Temporal Memory Safety
+# [CHERIvoke: Characterising Pointer Revocation using CHERI Capabilities for Temporal Memory Safety](https://www.cl.cam.ac.uk/~tmj32/papers/docs/xia19-micro.pdf) ([Poster](https://www.cl.cam.ac.uk/~sa614/posters/cherivoke.pdf))
 
 本文在新兴的CHERI体系结构扩展上，以低开销实现内存时间安全。  
-[CHERIvoke: Characterising Pointer Revocation using CHERI Capabilities for Temporal Memory Safety](https://www.cl.cam.ac.uk/~tmj32/papers/docs/xia19-micro.pdf) ([Poster](https://www.cl.cam.ac.uk/~sa614/posters/cherivoke.pdf))
 
 ---
 
