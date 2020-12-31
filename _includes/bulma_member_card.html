@@ -1,4 +1,4 @@
-<div class="card" id="{{ include.member.nick }}">
+<div class="card" id="{{ include.member.nick | slugify }}">
     <div class="card-content">
         <div class="media">
             <div class="media-left">
@@ -7,12 +7,15 @@
                 </figure>
             </div>
             <div class="media-content">
-                <p class="title is-4">{{ include.member.name }}</p>
-                <p class="subtitle is-6">@{{ include.member.github }}</p>
+                <p class="title">{{ include.member.name }}</p>
+                <p class="subtitle">{{ include.member.nick }}</p>
             </div>
         </div>
         <div class="content">
-            {{ include.member.description }}
+            <p>{{ include.member.description }}</p>
         </div>
+        <footer class="card-footer">
+            <p class="card-footer-item">@{{ include.member.github }}</p>
+        </footer>
     </div>
 </div>
