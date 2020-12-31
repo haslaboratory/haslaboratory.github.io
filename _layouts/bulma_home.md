@@ -8,6 +8,7 @@ layout: bulma
     <div class="hero-body">
         <div class="container">
             <h1 class="title">{{page.title}}</h1>
+            <h2 class="subtitle">{{page.subtitle}}</h2>
         </div>
     </div>
 </section>

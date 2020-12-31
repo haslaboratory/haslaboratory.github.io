@@ -1,5 +1,6 @@
 ---
-title: High-performance Architecture and System Laboratory
+title: 华中大高性能体系结构与系统实验室
+subtitle: HUST High-performance Architecture and System Laboratory
 layout: bulma_home
 permalink: /
 ---
