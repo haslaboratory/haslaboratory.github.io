@@ -1,5 +1,5 @@
 ---
-layout: collection
+layout: doc
 title: 如何使用SSH？
 order: 203
 ---

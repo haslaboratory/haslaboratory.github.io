@@ -1,7 +1,8 @@
 ---
 title: 实用工具
-layout: collection
+layout: doc
 section: true
+doc: 2
 order: 200
 ---
 

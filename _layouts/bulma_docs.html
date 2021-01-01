@@ -17,16 +17,14 @@ layout: bulma
 
 <section class="section">
   <div class="container">
-    <div class="columns">
-        <div class="column is-two-thirds">
+    <div class="columns is-centered">
+        <div class="column is-half">
             <div class="content">
                 {{content}}
             </div>
-        </div>
-        <div class="column">
-            {% assign menu = site[page.collection] | sort: "order", "last" %}
+            {% assign menu = site[page.collection] | where_exp: "item", "item.doc > 0" | sort: "doc", "last" %}
             {% assign collection = site.collections | where: "label", page.collection | first %}
-            {% include bulma_menu.html title=collection.title menu=menu %}
+            {% include bulma_menu.html title="目录" menu=menu %}
         </div>
     </div>
   </div>

@@ -1,7 +1,8 @@
 ---
 title: 网站建设
-layout: collection
+layout: doc
 section: true
+doc: 3
 order: 900
 ---
 
