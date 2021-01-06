@@ -16,24 +16,34 @@ layout: bulma
     </div>
 </section>
 
-<div class="columns is-centered">
-    <div class="column is-three-quarters-desktop">
-        <section class="section">
-            <div class="container">
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-third">
+                <div class="box has-background-light">
+                    <aside class="menu">
+                        <p class="menu-label">目录</p>
+                        {% include bulma_toc.html html=content sanitize=true class="menu-list" %}
+                    </aside>
+                </div>
+
+                <div class="box has-background-light">
+                    {% include bulma_post_related.html %}
+                </div>
+            </div>
+            <div class="column is-two-thirds">
                 <div class="content">
                     {{content}}
                 </div>
-            </div>
-        </section>
 
-        {% include bulma_post_related.html %}
-
-        <section class="section">
-            <div class="container">
-                {% include disqus.html %}
+                <section class="section">
+                    <div class="container">
+                        {% include disqus.html %}
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
     </div>
-</div>
+</section>
 
 {% include bulma_footer.html %}

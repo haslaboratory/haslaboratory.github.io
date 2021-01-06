@@ -23,7 +23,15 @@ layout: bulma
   <div class="container">
     <div class="columns">
       <div class="column is-one-third">
-        {% include bulma_menu.html title="目录" menu=lessons %}
+        <div class="box has-background-light">
+          {% include bulma_menu.html title="菜单" menu=lessons %}
+        </div>
+          <div class="box has-background-light">
+            <aside class="menu">
+              <p class="menu-label">目录</p>
+              {% include bulma_toc.html html=content sanitize=true class="menu-list" %}
+            </aside>
+          </div>
       </div>
       <div class="column is-two-thirds">
         <div class="content">

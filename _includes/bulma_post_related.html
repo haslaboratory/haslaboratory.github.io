@@ -23,11 +23,9 @@
 
     {% if sameTagCount >= minCommonTags %}
         {% if maxRelatedCounter == 0 %}
-            <section class="section">
-                <div class="container">
-                    <aside class="menu">
-                        <p class="menu-label">Related Posts</p>
-                        <ul class="menu-list">
+            <aside class="menu">
+                <p class="menu-label">相关文章</p>
+                <ul class="menu-list">
         {% endif %}
         <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}{{ commonTags }}</a></li>
         {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
@@ -41,6 +39,4 @@
 {% if maxRelatedCounter != 0 %}
     </ul>
     </aside>
-    </div>
-    </section>
 {% endif %}

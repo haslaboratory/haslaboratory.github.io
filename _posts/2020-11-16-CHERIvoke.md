@@ -12,28 +12,6 @@ tags:
 
 本文在新兴的CHERI体系结构扩展上，以低开销实现内存时间安全。  
 
----
-
-  - [1. 背景](#1-背景)
-    - [1.1 时间安全漏洞](#11-时间安全漏洞)
-    - [1.2 CHERI (Capability Hardware Enhanced RISC Instructions)](#12-cheri-capabilityhardwareenhancedriscinstructions)
-  - [2 设计](#2-设计)
-    - [2.1 关键](#21-关键)
-    - [2.2 软件优化](#22-软件优化)
-    - [2.3 硬件优化](#23-硬件优化)
-    - [2.4 清理流程](#24-清理流程)
-  - [3 实验](#3-实验)
-    - [3.1 实验设置](#31-实验设置)
-    - [3.2 实验结果](#32-实验结果)
-      - [3.2.1 整体评估](#321-整体评估)
-      - [3.2.2 开销细分](#322-开销细分)
-  - [4 相关工作](#4-相关工作)
-    - [4.1 撤销技术](#41-撤销技术)
-    - [4.2 页表技术](#42-页表技术)
-    - [4.3 标记内存](#43-标记内存)
-
----
-
 ## 1. 背景
 
 ### 1.1 时间安全漏洞
@@ -42,10 +20,11 @@ tags:
 - <div style="align: center"><img alt="Use After Free" src="../images/CHERIvoke/2020-11-16-use-after-free.jpg" width="400x"></div>
 - 为了避免出现悬空指针，需要在释放内存时将指针置为NULL。访问指针变量前，先判断是否为NULL，可以避免出现上述安全漏洞。但是当多个指针指向同一个内存块，就需要将所有指针变量的值都置为NULL。这就需要维护相应的元数据，开销会非常大。
 
-### 1.2 [CHERI](https://murdoch.is/papers/cl14cheriisa.pdf) (Capability Hardware Enhanced RISC Instructions)
+### 1.2 CHERI指令集扩展
 
-- 一种新的体系结构扩展，其中指针被扩展为原来的两倍大小(称为Capability)，扩展部分用于记录引用地址范围及权限等。
-- <div style="align: center"><img alt="CHERI" src="../images/CHERIvoke/2020-12-07-CHERI.png" width="400x"></div>
+[CHERI](https://murdoch.is/papers/cl14cheriisa.pdf) (Capability Hardware Enhanced RISC Instructions) 是一种新的体系结构扩展，其中指针被扩展为原来的两倍大小(称为Capability)，扩展部分用于记录引用地址范围及权限等。
+
+<img src="../images/CHERIvoke/2020-12-07-CHERI.png">
 
 ## 2 设计
 
