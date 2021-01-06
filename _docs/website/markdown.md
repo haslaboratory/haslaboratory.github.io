@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 如何使用Markdown?
-order: 902
+order: 5
 ---
 
 ## Markdown使用语法如下：

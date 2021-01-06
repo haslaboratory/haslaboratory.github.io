@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 如何使用代码高亮？
-order: 904
+order: 6
 ---
 
 [Jekyll](jekyll.html)默认使用[Rouge](https://github.com/rouge-ruby/rouge)进行代码高亮。引入一段c++代码段的示例如下：
