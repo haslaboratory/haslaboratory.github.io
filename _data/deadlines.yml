@@ -1,0 +1,24 @@
+- conference: SC 2021
+  description: Submission due.
+  deadline: 2021-04-09
+  url: https://sc21.supercomputing.org/submit/paper-submissions/
+
+- conference: SC 2021
+  description: Abstract due.
+  deadline: 2021-04-02
+  url: https://sc21.supercomputing.org/submit/paper-submissions/
+
+- conference: ICS 2021
+  description: Submission due.
+  deadline: 2021-02-04
+  url: https://ics21.github.io/call-for-papers
+
+- conference: ICS 2021
+  description: Abstract due.
+  deadline: 2021-01-28
+  url: https://ics21.github.io/call-for-papers
+
+- conference: ATC 2021
+  description: Submittion due.
+  deadline: 2021-01-12
+  url: https://www.usenix.org/conference/atc21/call-for-papers
