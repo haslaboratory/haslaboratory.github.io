@@ -7,15 +7,12 @@
     </div>
 
     <div class="control">
-        <a href="/members/#{{ page.author | slugify }}" class="tags has-addons">
-            <span class="tag icon is-dark"><i class="far fa-user"></i></span>
-            <span class="tag is-info"> {{ page.author" }} </span>
-        </a>
+        {% include bulma_member.html nick=page.author %}
     </div>
 
     {% for tag in page.tags %}
     <div class="control">
-        <a href="/tags/#{{ tag | slugify }}" class="tags has-addons">
+        <a href="/tags/#{{ tag | downcase | slugify }}" class="tags has-addons">
             <span class="tag icon is-dark"><i class="fas fa-hashtag"></i></span>
             <span class="tag is-info">{{ tag }}</span>
         </a>

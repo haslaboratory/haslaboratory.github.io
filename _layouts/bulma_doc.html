@@ -1,0 +1,45 @@
+---
+layout: bulma
+---
+
+{% include bulma_navbar.html %}
+
+{% assign file = page.path | split: "/" | last %}
+{% assign directory = page.path | remove: file %}
+{% assign lessons = site[page.collection] | where_exp: "lesson", "lesson.path contains directory" %}
+
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">{{page.title}}</h1>
+            {% if page.subtitle %}
+            <h2 class="subtitle">{{page.subtitle}}</h2>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="box has-background-light">
+          {% include bulma_menu.html title="菜单" menu=lessons %}
+        </div>
+          <div class="box has-background-light">
+            <aside class="menu">
+              <p class="menu-label">目录</p>
+              {% include bulma_toc.html html=content sanitize=true class="menu-list" %}
+            </aside>
+          </div>
+      </div>
+      <div class="column is-two-thirds">
+        <div class="content">
+          {{content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include bulma_footer.html %}
