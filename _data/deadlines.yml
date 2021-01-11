@@ -22,3 +22,33 @@
   description: Submittion due.
   deadline: 2021-01-12
   url: https://www.usenix.org/conference/atc21/call-for-papers
+
+- conference: SOSP 2021
+  description: Submittion due.
+  deadline: 2021-05-07
+  url: https://sosp2021.mpi-sws.org/cfp.html
+
+- conference: SOSP 2021
+  description: Submittion due.
+  deadline: 2021-05-07
+  url: https://sosp2021.mpi-sws.org/cfp.html
+
+- conference: SOCC 2021
+  description: Submittion due.
+  deadline: 2021-04-09
+  url: https://www.ieee-socc.org/images/stories/socc2021/pdf/cfp-socc2021.pdf
+
+- conference: ISSS+CODES 2021
+  description: Submittion due.
+  deadline: 2021-04-02
+  url: https://esweek.org/wp-content/uploads/2020/12/CODES_ISSS_2021_CfP.pdf
+
+- conference: icpp 2021
+  description: Submittion due.
+  deadline: 2021-04-16
+  url: https://oaciss.uoregon.edu/icpp21/index.php
+
+- conference: icpp 2021
+  description: Submittion due.
+  deadline: TBA
+  url: https://www.storageconference.us/index.html
