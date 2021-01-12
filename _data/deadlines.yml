@@ -1,3 +1,13 @@
+- conference: HPDC 2021
+  description: Abstract due.
+  deadline: 2021-01-18
+  url: http://www.hpdc.org/2021/
+
+- conference: HPDC 2021
+  description: Submission due.
+  deadline: 2021-01-24
+  url: http://www.hpdc.org/2021/
+
 - conference: PACT 2021
   description: Submission due.
   deadline: 2021-03-31
