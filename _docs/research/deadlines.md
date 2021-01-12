@@ -7,6 +7,8 @@ order: 10
 {% capture today %}{{'now' | date: '%Y-%m-%d'}}{% endcapture %}
 {% assign deadlines = site.data.deadlines | sort: "deadline" %}
 
+# 截稿日期
+
 <div class="menu">
     <ul class="menu-list">
         {% for this in deadlines %}
