@@ -77,3 +77,24 @@
   description: Submittion due.
   deadline: 2021-04-16
   url: https://oaciss.uoregon.edu/icpp21/index.php
+
+- conference: IPDPS 2021
+  description: Submittion due.
+  deadline: 2020-10-12
+  url: https://www.ipdps.org/ipdps2021/2021-call-for-papers.html
+
+- conference: ICDCS 2021
+  description: Submittion due.
+  deadline: 2021-01-06
+  url: https://www.computer.org/conferences/cfp/ICDCS
+
+- conference: SYSTOR 2021
+  description: Submittion due.
+  deadline: 2021-03-09
+  url: https://www.systor.org/2021/cfp.html
+
+- conference: MSST 2021
+  description: Submittion due.
+  deadline: TO BE ANNOUNCED
+  url: https://www.storageconference.us/index.html
+
