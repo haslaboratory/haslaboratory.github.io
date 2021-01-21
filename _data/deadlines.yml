@@ -77,3 +77,13 @@
   description: Submittion due.
   deadline: 2021-04-16
   url: https://oaciss.uoregon.edu/icpp21/index.php
+
+- conference: SPAA 2021
+  description: Abstract due.
+  deadline: 2021-02-08
+  url: http://spaa.acm.org/
+
+- conference: SPAA 2021
+  description: Submittion due.
+  deadline: 2021-02-11
+  url: http://spaa.acm.org/
