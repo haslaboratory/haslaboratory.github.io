@@ -1,5 +1,5 @@
 ---
-layout:doc
+layout: doc
 order: 2
 title: "SimpleSSD-固件模型"
 ---
