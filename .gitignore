@@ -4,4 +4,5 @@ _site
 .bundle
 vendor
 target
-.history/
+.history
+.vscode
