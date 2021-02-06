@@ -1,3 +1,9 @@
+---
+layout:doc
+order: 2
+title: "SimpleSSD-固件模型"
+---
+
 # SimpleSSD-固件模型
 
 ## 1. HIL
