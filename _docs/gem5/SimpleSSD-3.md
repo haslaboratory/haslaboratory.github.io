@@ -1,3 +1,9 @@
+---
+layout: doc
+order: 3
+title: "SimpleSSD-BAR"
+---
+
 # SimpleSSD-BAR
 
 ## 1. BAR是什么
