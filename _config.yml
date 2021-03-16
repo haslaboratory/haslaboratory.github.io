@@ -1,6 +1,6 @@
 title: HASLAB.ORG
 description: The computer world is a world of dialect.
-permalink: /:year/:title:output_ext
+permalink: /post/:title:output_ext
 exclude: [project, src, build.sbt, CNAME, LICENSE, README.md, bin]
 
 collections:
