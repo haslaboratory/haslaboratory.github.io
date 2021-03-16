@@ -1,11 +1,11 @@
 <div class="card" id="{{ include.member.nick | slugify }}">
     <div class="card-content">
         <div class="media">
-            <div class="media-left">
+            <a class="media-left" href="https://github.com/{{ include.member.github }}">
                 <figure class="image is-96x96">
                     {% avatar user=include.member.github size=96 %}
                 </figure>
-            </div>
+            </a>
             <div class="media-content">
                 <p class="title">{{ include.member.name }}</p>
                 <p class="subtitle">{{ include.member.nick }}</p>
@@ -15,7 +15,7 @@
             <p>{{ include.member.description }}</p>
         </div>
         <footer class="card-footer">
-            <p class="card-footer-item">@{{ include.member.github }}</p>
+            <p class="card-footer-item">{{ include.member.email }}</p>
         </footer>
     </div>
 </div>
