@@ -1,7 +1,11 @@
 ---
-layout: doc
-title: Redis - 读写流程
-order: 1
+layout: post
+title: Redis & Memcached YCSB 性能测试
+author: Jianfeng Wu
+tags:
+    - Redis
+    - Memcached
+    - YCSB
 ---
 
 # Redis使用文档——命令处理流程及测试方法
@@ -70,7 +74,9 @@ order: 1
 ### 3.2 Flame Graph
 
 - 客户端进程：
-![client](https://haslab.org/docs/redis/image/redis-cli.svg)
+
+![client](../images/2021-03-18/redis-cli.svg)
 
 - 服务器进程：
-![server](https://haslab.org/docs/redis/image/redis-server-get.svg)
+
+![server](../images/2021-03-18/redis-server-get.svg)
