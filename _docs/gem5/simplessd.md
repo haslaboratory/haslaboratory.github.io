@@ -269,4 +269,20 @@ m5 exit<br>
 - 错误信息：IOError: Can't find file 'armv8_gem5_v1_4cpu.dtb' on M5_PATH.
 - 解决方法：去掉执行命令中的 --dtb-file=armv8_gem5_v1_4cpu.dtb。
 
+### gem5.opt运行出错3
+
+- 执行命令：
+
+```bash
+M5_PATH=$HOME/m5 ./build/X86/gem5.opt --debug-flag=M5Print --debug-file=debug.txt ./configs/example/fs.py --kernel=x86_64-vmlinux-4.9.92 --num-cpu=2 --cpu-clock=2GHz --caches --l2cache --cpu-type=AtomicSimpleCPU --mem-size=2GB --mem-type=DDR4_2400_8x8 --ssd-interface=nvme --ssd-config=./src/dev/storage/simplessd/config/sample.cfg
+```
+
+- 错误信息：IOError: Can't find file 'x86root.img' on M5_PATH.
+- 原因：推测可能的原因是M5_PATH export的环境变量未生效，但是在py中打印M5_PATH确实是`$HOME/m5`，玄学~
+- 解决方法：由[资料1](https://stackoverflow.com/questions/54878907/gem5-x86-full-system-mode-run-fails-with-cant-find-file-x86root-img-on-path)和[资料2](https://stackoverflow.com/questions/56319473/gem-5-ioerror-cant-find-a-path-to-system-files-full-system-x86-simulation-set/56320982#56320982)可知，可直接指定所需的两个文件路径，i.e., x86_64-vmlinux-4.9.92和x86root.img，前者用`--kernel`选项指定，后者用`--disk-image`指定。
+
+```bash
+./build/X86/gem5.opt --debug-flag=M5Print --debug-file=debug.txt ./configs/example/fs.py --kernel=/home/shiliu/m5/binaries/x86_64-vmlinux-4.9.92 --num-cpu=2 --cpu-clock=2GHz --caches --l2cache --cpu-type=AtomicSimpleCPU --mem-size=2GB --mem-type=DDR4_2400_8x8 --ssd-interface=nvme --ssd-config=./src/dev/storage/simplessd/config/sample.cfg --disk-image=/home/shiliu/m5/disks/x86root.img
+```
+
 [返回科研指南](https://haslab.org/guide/index.html)

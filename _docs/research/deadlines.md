@@ -1,13 +1,17 @@
 ---
 layout: doc
 title: 截稿日期
+permalink: /deadlines.html
+redirect_from: /docs/research/deadlines.html
 order: 10
 ---
+
+科学技术不是第一生产力，deadline才是。
 
 {% capture today %}{{'now' | date: '%Y-%m-%d'}}{% endcapture %}
 {% assign deadlines = site.data.deadlines | sort: "deadline" %}
 
-# 截稿日期
+### 生产力列表
 
 <div class="menu">
     <ul class="menu-list">

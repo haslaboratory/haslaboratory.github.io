@@ -87,3 +87,13 @@
   description: Submittion due.
   deadline: 2021-02-11
   url: http://spaa.acm.org/
+
+- conference: MICRO 2021
+  description: Abstract Registration Due.
+  deadline: 2021-04-09
+  url: https://www.microarch.org/micro54/submit/papers.php
+
+- conference: MICRO 2021
+  description: Submission Deadline.
+  deadline: 2021-04-16
+  url: https://www.microarch.org/micro54/submit/papers.php
