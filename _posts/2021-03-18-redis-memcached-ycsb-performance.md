@@ -8,7 +8,7 @@ tags:
     - YCSB
 ---
 
-# Redis使用文档——命令处理流程及测试方法
+# Redis & Memcached 测试文档
 
 ## 1. Redis服务器命令处理流程
 
@@ -56,9 +56,32 @@ tags:
 - 负载使用YCSB-tracegen生成的文本文件，客户端使用C++编写，具体可见[has-lab/memcpytest/deps/hiredis/Redistest.cpp](https://github.com/has-lab/memcpytest/blob/redistest/deps/hiredis/Redistest.cpp)。
 - 测试客户端逻辑：先读取trace到内存，用vector存储命令以避免边读文件边执行命令带来的额外开销；然后执行warm（预先写入数据）和test（负载，使用的是纯读），客户端会显示总执行时间和test内的平均读延时，服务器端会显示每100000次（可调）命令所使用的时间。
 
-## 3. 测试结果
+## 3. Memcached服务器命令处理流程
+// need to be improved
+### 3.1 set
 
-### 3.1 YCSB
+- set分为两个部分。
+- 第一部分：event_handler -> drive_machine -> try_read_command_ascii -> process_command -> process_update_command
+
+- 第二部分：event_handler -> drive_machine -> complete_nread -> complete_nread_ascii -> store item -> do store item
+
+### 3.2 get
+
+- event_handler -> drive_machine -> try_read_command_ascii -> process_command -> process_get_command -> limited_get -> item get -> do item get
+
+## 4. 编写C++客户端测试Memcached
+
+### 4.1 测试原理
+
+- 类似Redis的测试。
+
+### 4.2 测试工具
+
+- 类似Redis的测试。
+
+## 5. 测试结果
+
+### 5.1 YCSB
 
 |负载、平台localhost、延迟（ns）|redis3.0|redis-server process|memcached1.6.9|cpp  unordered_map|
 |:-:|:-:|:-:|:-:|:-:|
@@ -71,7 +94,7 @@ tags:
 - 括号内为相比于相同测试内容的unordered_map的延时倍数。
 - 可以观察到：① redis和memcached的命令执行时延占整体时延很小，大约为2%，更多的是网络传输的时延；② 相比C++标准库的unordered_map，redis的数据存储效率要略低，读写操作的时延增加到了1.7-2.9倍，原因可能是要满足数据校验、并行性等其他要求。
 
-### 3.2 Flame Graph
+### 5.2 Flame Graph
 
 - 客户端进程：
 
@@ -81,14 +104,13 @@ tags:
 
 ![server](../images/2021-03-18/redis-server-get.svg)
 
-## 4. Redis及Memcached客户端主要代码
+## 6. Redis及Memcached客户端主要代码
 
-### 4.1 Redis
+### 6.1 Redis
 详细代码位于[has-lab/memcpytest/deps/hiredis/Redistest.cpp](https://github.com/has-lab/memcpytest/blob/redistest/deps/hiredis/Redistest.cpp)。
 
 <details>
   <summary>Redis客户端main函数</summary>
-  ```C++
 int main() {
     timespec t1, t2, t3, t4;
     uint64_t deltaT;
@@ -120,16 +142,14 @@ int main() {
     cout<<"Average Get time : "<<de/100000<<" ns."<<endl;
     return 0;
 }
-  ```
 </details>
 
-### 4.2 Memcached
+### 6.2 Memcached
 详细代码位于[has-lab/memcpytest/MemcachedTest.cc](https://github.com/has-lab/memcpytest/blob/memcachedtest/MemcachedTest.cc)。
 需要下载libmemcached。
 
 <details>
   <summary>Memcached客户端类定义</summary>
-  ```C++
 class MemCachedClient {
 public: 
     ~MemCachedClient() 
@@ -189,5 +209,4 @@ public:
 private:
     memcached_st* memc;
 }; 
-  ```
 </details>
