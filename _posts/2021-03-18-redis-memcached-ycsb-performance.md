@@ -80,3 +80,114 @@ tags:
 - 服务器进程：
 
 ![server](../images/2021-03-18/redis-server-get.svg)
+
+## 4. Redis及Memcached客户端主要代码
+
+### 4.1 Redis
+详细代码位于[has-lab/memcpytest/deps/hiredis/Redistest.cpp](https://github.com/has-lab/memcpytest/blob/redistest/deps/hiredis/Redistest.cpp)。
+
+<details>
+  <summary>Redis客户端main函数</summary>
+  ```C++
+int main() {
+    timespec t1, t2, t3, t4;
+    uint64_t deltaT;
+
+    Load(true); // load for warm
+    Load(false); // load for test
+    struct timeval timeout = { 1, 500000 }; // 1.5 seconds， 超时时间
+
+    c = redisConnectWithTimeout((char*)"127.0.0.1", 6379, timeout); // 连接Redis服务器， 需先运行redis-server命令
+    if (c->err) {
+        printf("Connection error: %s\n", c->errstr);
+        exit(1);
+    }
+    else{
+        printf("Connection ok\n");
+    }
+    
+    clock_gettime(CLOCK_REALTIME, &t1);
+    Warm_Exec();
+    clock_gettime(CLOCK_REALTIME, &t2);
+    deltaT = (t2.tv_sec - t1.tv_sec) * 1000000000 + t2.tv_nsec - t1.tv_nsec; //纳秒
+    cout<<"Warm time : "<<deltaT<<" ns"<<endl;
+
+    clock_gettime(CLOCK_REALTIME, &t3);
+    Test_Exec();
+    clock_gettime(CLOCK_REALTIME, &t4);
+    deltaT = (t4.tv_sec - t3.tv_sec) * 1000000000 + t4.tv_nsec - t3.tv_nsec; //纳秒
+    cout<<"Test time : "<<deltaT<<" ns"<<endl;
+    cout<<"Average Get time : "<<de/100000<<" ns."<<endl;
+    return 0;
+}
+  ```
+</details>
+
+### 4.2 Memcached
+详细代码位于[has-lab/memcpytest/MemcachedTest.cc](https://github.com/has-lab/memcpytest/blob/memcachedtest/MemcachedTest.cc)。
+需要下载libmemcached。
+
+<details>
+  <summary>Memcached客户端类定义</summary>
+  ```C++
+class MemCachedClient {
+public: 
+    ~MemCachedClient() 
+    {
+        memcached_free(memc); 
+    };
+
+    MemCachedClient() 
+    {
+        memcached_return rc; 
+        memcached_server_st *server = NULL;
+        memc = memcached_create(NULL);
+        server = memcached_server_list_append(server, "127.0.0.1", 11211, &rc);
+        rc=memcached_server_push(memc,server);
+
+        if (MEMCACHED_SUCCESS != rc) { 
+            cout <<"memcached_server_push failed! rc: " << rc << endl;
+        }
+
+        memcached_server_list_free(server); 
+    };
+
+    bool Insert(const string key, const string value,time_t expiration = 0) 
+    {
+        if (key.empty() || value.empty()) return false; 
+
+        memcached_return rc = memcached_set(memc, key.c_str(), key.length(), value.c_str(), value.length(), expiration, 0);
+        return memcached_success(rc);
+    };
+
+    string Get(const string key) 
+    {
+        if (key.empty()) return ""; 
+
+        uint32_t flags = 0;
+        memcached_return rc;
+        size_t value_length;
+        char* value = memcached_get(memc, key.c_str(), key.length(), &value_length, &flags, &rc);
+        if(rc == MEMCACHED_SUCCESS) {
+            return string(value); 
+        }
+        return ""; 
+    };
+
+    bool Update(const string key, const string value,time_t expiration = 0) 
+    {
+        if (key.empty() || value.empty()) return false; 
+
+        memcached_return rc = memcached_replace(memc, key.c_str(), key.length(), value.c_str(), value.length(), expiration, 0);
+        return memcached_success(rc);
+    };
+
+    bool Remove(const string key){
+        return memcached_success(memcached_delete(memc, key.c_str(), key.length(), 0));
+    }
+
+private:
+    memcached_st* memc;
+}; 
+  ```
+</details>
