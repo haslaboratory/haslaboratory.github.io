@@ -66,3 +66,9 @@ cat ~/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
 **注意**，如果服务器或本地任何SSH相关文件的权限不合适，都可能导致无法正常登陆。
+
+## 利用SSH创建本地SOCKS5代理
+
+```
+ssh -CqTnN -D localhost:8080 nickname
+```
