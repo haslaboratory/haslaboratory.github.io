@@ -13,3 +13,10 @@ order: 1
 ```shell
 bundle exec jekyll serve --host localhost --port 4040
 ```
+
+Ubuntu/Debian下直接尝试下面命令一键安装+测试：
+
+```
+bin/serve
+```
+

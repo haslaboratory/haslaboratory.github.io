@@ -1,0 +1,28 @@
+#!/bin/bash
+
+apt_install="ruby-dev zlib1g-dev"
+
+for pkt in "make gcc g++"
+do
+    if [ "$(which ${pkt})" = "" ]; then
+        apt_install="$apt_install $pkt"
+    fi
+done
+
+echo "sudo apt install $apt_install"
+sudo apt update
+sudo apt install $apt_install
+
+gem install --user-install bundler
+
+RUBY_VERSION=$(ruby -e 'print "#{ RUBY_VERSION }"')
+
+if [ -d "$HOME/.gem/ruby/${RUBY_VERSION}/bin" ] ; then
+    echo PATH=\"\$HOME/.gem/ruby/${RUBY_VERSION}/bin:\$PATH\" >> $HOME/.profile
+fi
+
+. $HOME/.profile
+
+bundle config set --local path ~/.gem
+
+bundle install
