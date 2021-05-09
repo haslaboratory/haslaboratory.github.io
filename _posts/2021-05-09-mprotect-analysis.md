@@ -8,11 +8,11 @@ tags:
     - mprotect
 ---
 
-# 写在前面
+# 1. 写在前面
 
 `mprotect`是一种Linux提供的内存保护的系统调用，通过修改内存区的读、写、执行等属性限制内存访问的方式，若非法访问内存区，则进程会发出SIGSEGV信号。`mprotect`可用于捕捉内存访问行为。
 
-# mprotect用法
+# 2. mprotect用法
 
 [Linux manual page](https://man7.org/linux/man-pages/man2/mprotect.2.html)提供mprotect用法，形式：
 
@@ -100,7 +100,7 @@ main(int argc, char *argv[])
 }
 ```
 
-# mprotect源码分析
+# 3. mprotect源码分析
 
 按照下面线索追踪系统调用`mprotect`在内核中的执行过程：
 
@@ -115,7 +115,7 @@ SYSCALL_DEFINE3(mprotect, .., start, .., len, .., prot)
                             -> change_pte_range(vma, pmd, addr, end, newprot, cp_flags)
 ```
 
-## 页表寻址
+## 3.1. 页表寻址
 
 Linux虚拟内存三级页表寻址，其中：
 - PGD: page global directory
@@ -129,9 +129,9 @@ Linux虚拟内存三级页表寻址，其中：
 ![](../images/2021-05-09-linux-mprotect/page_table_layout.png)
 
 
-## 数据结构
+## 3.2. 数据结构
 
-### struct vm_area_struct
+### 3.2.1. struct vm_area_struct
 
 记录某个Task的一段虚拟内存，而Task的虚拟内存由`struct mm_struct *vm_mm`记录，而`vm_mm`的每个分段的虚拟内存`vma`由双向链表(`vm_next`和`vm_prev`)和红黑树管理(`rb_node vm_rb`)。
 
@@ -171,9 +171,9 @@ struct vm_area_struct {
     const struct vm_operations_struct *vm_ops; // 与这个结构结构体相关的操作，一般在模块初始化时执行自定义的ops
 ```
 
-# 分析调用路径源码
+# 4. 分析调用路径源码
 
-## do_mprotect_pkey
+## 4.1. do_mprotect_pkey
 
 1. 根据起始地址`start`找到对应的`vma`；
 2. 判断vma的范围是否覆盖`start`，并尝试在current task的虚拟地址空间的中找链表的前一个内存片段；
@@ -270,7 +270,7 @@ out:
 }
 ```
 
-## mprotect_fixup
+## 4.2. mprotect_fixup
 
 1. 尝试与vma链表上的前向和后向vma合并；
 2. 改变vma对应`[start, end]`内存页属性。
@@ -355,7 +355,7 @@ fail:
 
 ```
 
-## change_protection
+## 4.3. change_protection
 
 判断对HugePage页属性改变还是对普通页。
 
@@ -378,7 +378,7 @@ unsigned long change_protection(struct vm_area_struct *vma, unsigned long start,
 }
 ```
 
-## change_protection_range
+## 4.4. change_protection_range
 
 在改变页属性之前会将CPU cache中的页表信息写回，在改变页表属性之后会写回TLB的页表映射项。
 
@@ -414,7 +414,7 @@ static unsigned long change_protection_range(struct vm_area_struct *vma,
 }
 ```
 
-## change_p4d_range / change_pud_range / change_pmd_range / change_pte_range
+## 4.5. change_p4d_range / change_pud_range / change_pmd_range / change_pte_range
 
 按照p4d->pud->pmd寻址到pte，改变页属性。
 
@@ -475,6 +475,6 @@ static unsigned long change_pte_range(struct vm_area_struct *vma, pmd_t *pmd,
 }
 ```
 
-# 参考资料
+# 5. 参考资料
 
 - http://abcdxyzk.github.io/blog/2015/06/02/kernel-mm-alloc/
