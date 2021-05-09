@@ -475,31 +475,6 @@ static unsigned long change_pte_range(struct vm_area_struct *vma, pmd_t *pmd,
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 参考资料
 
 - http://abcdxyzk.github.io/blog/2015/06/02/kernel-mm-alloc/
