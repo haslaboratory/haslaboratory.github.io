@@ -1,3 +1,13 @@
+- conference: HPBD&IS 2021
+  description: Paper Submission Deadline.
+  deadline: 2021-08-15
+  url: http://www.hpbdis.org/public/portal/list/index/id/9.html
+
+- conference: NAS 2021
+  description: Paper Submission Deadline.
+  deadline: 2021-05-30
+  url: http://www.nas-conference.org/NAS-2021/cfp.html
+
 - conference: HPDC 2021
   description: Abstract due.
   deadline: 2021-01-18
