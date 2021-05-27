@@ -38,21 +38,24 @@
                     <span>标签</span>
                 </a>
 
-                <a class="navbar-item" href="/docs/">
-                    <span class="icon has-text-warning">
-                        <i class="fas fa-book"></i>
-                    </span>
-                    <span>文档</span>
-                </a>
-
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        <span class="icon">
-                            <i class="fas fa-ellipsis-h"></i>
+                        <span class="icon has-text-warning">
+                            <i class="fas fa-book"></i>
                         </span>
+                        <span>文档</span>
                     </a>
-
+                
                     <div class="navbar-dropdown">
+                        {% assign docs = site.docs | where_exp: "item", "item.doc > 0" | sort: "doc", "last" %}
+                        {% for doc in docs %}
+                            <a class="navbar-item" href="{{ doc.url }}">
+                                {{ doc.title }}
+                            </a>
+                        {% endfor %}
+
+                        <hr class="navbar-divider">
+
                         <a class="navbar-item" href="https://e.gitee.com/haslab/issues/list">
                             <span class="icon has-text-link">
                                 <i class="fas fa-comments"></i>
