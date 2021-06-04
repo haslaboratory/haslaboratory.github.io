@@ -58,5 +58,5 @@ sudo smbpasswd -a <username>
 
 用户：
 
-- 在Windows上登录samba文件服务器：win+r，输入//ip
+- 在Windows上登录samba文件服务器：win+r，输入\\\\ip
 - 在Mac上登录samba文件服务器：打开finder，然后command+k，输入samba://ip
