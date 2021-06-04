@@ -53,10 +53,15 @@ sudo smbpasswd -a <username>
 ```
 3. 重启samba
 ```bash
-/etc/init.d/samba restart
+sudo /etc/init.d/smbd restart
 ```
 
 用户：
-
+1. 验证是否能登录samba文件服务器
 - 在Windows上登录samba文件服务器：win+r，输入\\\\ip
 - 在Mac上登录samba文件服务器：打开finder，然后command+k，输入samba://ip
+2. [将文件服务器与磁盘驱动器映射](https://blog.csdn.net/hunanchenxingyu/article/details/9751639)
+
+Windows10步骤：此电脑->映射网络驱动器
+
+![](../../images/2021-6-4-labserver/samba_driver.png)
