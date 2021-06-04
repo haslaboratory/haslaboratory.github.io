@@ -31,3 +31,32 @@ curl -s https://install.zerotier.com | sudo bash
 zerotier-cli join a84ac5c10afe08ee
 ```
 
+# [samba文件服务器](https://sites.google.com/site/devlibrary/linux/samba-wen-jian-fu-wu-qi-she-zhi-zui-jian-dan-pian-)
+
+管理员：
+
+1. 创建samba账号
+```bash
+sudo smbpasswd -a <username>
+```
+2. 配置samba conf，在文件`/etc/samba/smb.conf`底部添加如下内容，有几个用户就添加几个下面模板，将username换成具体的用户名
+```bash
+[username]
+  path = /home/<username>
+  available = yes
+  browseable = yes
+  public = no
+  writable = yes
+  valid users = <username>
+  create mask = 0755
+  directory mask = 0755
+```
+3. 重启samba
+```bash
+/etc/init.d/samba restart
+```
+
+用户：
+
+- 在Windows上登录samba文件服务器：win+r，输入\\\\ip
+- 在Mac上登录samba文件服务器：打开finder，然后command+k，输入samba://ip
