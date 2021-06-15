@@ -6,3 +6,4 @@ vendor
 target
 .history
 .vscode
+.DS_Store

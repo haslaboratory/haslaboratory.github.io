@@ -5,10 +5,10 @@
 {% if include.id contains youtube %}
     {% assign id = include.id | replace:youtube, "" %}
     {% include video_youtube.html id=id %}
-{% elsif include.id == bilibili_bv %}
+{% elsif include.id contains bilibili_bv %}
     {% assign id = include.id | replace:bilibili_bv, "" %}
     {% include video_bilibili_bv.html id=id %}
-{% elsif include.id == bilibili_av %}
+{% elsif include.id contains bilibili_av %}
     {% assign id = include.id | replace:bilibili_av, "" %}
     {% include video_bilibili_av.html id=id %}
 {% endif %}
