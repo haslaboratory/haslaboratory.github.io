@@ -7,6 +7,7 @@ tags:
 -Multi-GPU
 -data transfer
 ---
+
 # Efficient Multi-GPU Shared Memory via Automatic Optimization of Fine-Grained Transfers
 
 ## 摘要
