@@ -30,7 +30,7 @@ GPU 通信在关键的执行路径上仍然存在很大的传输延迟，这些�
 
 
 
-![image](https://github.com/juatapawn/has-lab.github.io/blob/master/images/2021-06-15-IAT/DMA%20P2P%20compare.png)
+![image](../images/2021-6-15-Efficient%20Multi-GPU/DMA%20P2P%20compare.png)
 
 **DMA模式**
 
@@ -105,13 +105,13 @@ PCIe和NVlink在小数据量的访问上性能都很差
 3. 平滑互联的利用率保证没有带宽被浪费
 4. 通过确保传输的粗粒度来保证传输效率
 
-![image](https://github.com/juatapawn/has-lab.github.io/blob/master/images/2021-06-15-IAT/Overview%20of%20PROACT.png)
+![image](../images/2021-6-15-Efficient%20Multi-GPU/Overview%20of%20PROACT.png)
 
 
 
 ### Optimizing Transfer Efficiency via Profiling
 
-![image](https://github.com/juatapawn/has-lab.github.io/blob/master/images/2021-06-15-IAT/compile%20time.png)
+![image](../images/2021-6-15-Efficient%20Multi-GPU/compile%20time.png)
 
 根据每个应用进行分析，需要多少线程进行计算，多少线程进行数据传输，在满足的带宽的情况下，尽量让更多的线程去进行数据传输
 
@@ -119,7 +119,7 @@ compile time profiling，软件配置。做的事情就是选择合适的传输�
 
 ### Tracking Local Data Transfer Readiness
 
-![image](https://github.com/juatapawn/has-lab.github.io/blob/master/images/2021-06-15-IAT/decoupled%20data%20generation%20with%20transfer.png)
+![image](../images/2021-6-15-Efficient%20Multi-GPU/decoupled%20data%20generation%20with%20transfer.png)
 
 主要的做的就是本地GPU产生数据与传输给远端GPU进行分离，这样可以方便进行下一步的操作
 
