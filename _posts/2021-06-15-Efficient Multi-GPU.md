@@ -1,21 +1,14 @@
 ---
 layout: post
-title: "IAT: 不要在分配LLC时忘了设备I/O"
-author: Jianfeng Wu
-tags:
- - ISCA
- - 2021
- - Last-Level Cache
- - Data Direct I/O
----
----
-layout: post
 title: "多GPU系统共享内存优化细粒度传输"
 author: Aoxin Wei
 tags:
--ISCA21
--Multi-GPU
--data transfer
+ - ISCA
+ - 2021
+ - Muti-GPU
+ - data transfer
+---
+
 ---
 
 # Efficient Multi-GPU Shared Memory via Automatic Optimization of Fine-Grained Transfers
