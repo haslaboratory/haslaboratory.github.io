@@ -1,3 +1,16 @@
+---
+layout: post
+title: "多GPU系统共享内存优化细粒度传输"
+author: Aoxin Wei
+tags:
+ - ISCA
+ - 2021
+ - Muti-GPU
+ - data transfer
+---
+
+---
+
 # Efficient Multi-GPU Shared Memory via Automatic Optimization of Fine-Grained Transfers
 
 ## 摘要
@@ -176,7 +189,11 @@ PROACT的区域
 
 
 
+## 注意
 
+PROACT与NVLINK  NVSWITCH的区别：
+
+PROACT暂时没有产品，但是NVLINK  NVSWITCH已经在英伟达的最新产品上使用了，NVLINK  NVSWITCH与PCIE一样都是多GPU互联协议，它们都支持DMA以及P2P这两种传输机制，本文的PROACT是对于互联协议中传输机制的优化
 
 
 
