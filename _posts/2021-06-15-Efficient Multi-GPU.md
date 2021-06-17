@@ -1,6 +1,6 @@
 ---
 layout: post
-title:"多GPU系统共享内存优化细粒度传输"
+title: "多GPU系统共享内存优化细粒度传输"
 author: Aoxin Wei
 tags:
 -ISCA21
