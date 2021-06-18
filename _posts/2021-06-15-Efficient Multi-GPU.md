@@ -1,17 +1,15 @@
 ---
 layout: post
-title: "多GPU系统共享内存优化细粒度传输"
+title: "Multi-GPU Shared Memory: 多GPU共享内存细粒度传输"
 author: Aoxin Wei
 tags:
  - ISCA
  - 2021
- - Muti-GPU
- - data transfer
+ - GPU
+ - Shared Memory
 ---
 
----
-
-# Efficient Multi-GPU Shared Memory via Automatic Optimization of Fine-Grained Transfers
+# [Efficient Multi-GPU Shared Memory via Automatic Optimization of Fine-Grained Transfers](https://conferences.computer.org/iscapub/pdfs/ISCA2021-4ghucdBnCWYB7ES2Pe4YdT/333300a139/333300a139.pdf)
 
 ## 摘要
 
