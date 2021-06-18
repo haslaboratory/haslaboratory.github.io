@@ -1,3 +1,4 @@
 #!/bin/bash
 
-git push git@github.com:has-lab/has-lab.github.io.git
+git pull git@github.com:has-lab/has-lab.github.io.git master
+git push git@github.com:has-lab/has-lab.github.io.git master
