@@ -1,0 +1,38 @@
+name: Journal
+order: 2
+publications:
+  - title: "A Correlation-Aware Page-Level FTL to Exploit Semantic Links in Workloads"
+    short: TPDS 2019
+    authors: Jian Zhou, Dezhi Han, Jun Wang, Xiaobo Zhou, ChangJun Jiang.
+    publisher: IEEE Transactions on Parallel and Distributed Systems.
+    url: https://ieeexplore.ieee.org/iel7/71/4359390/08470972.pdf
+
+  - title: "ApproxSSD: Data layout Aware Sampling on an Array of SSDs"
+    short: TC 2019
+    authors: Jian Zhou, Huafeng Wu, Jun Wang.
+    publisher: IEEE Transactions on Computers.
+    url: https://ieeexplore.ieee.org/iel7/12/4358213/08467988.pdf
+
+  - title: Achieving Load Balance for Parallel Data Access on Distributed File Systems
+    short: TC 2018
+    url: https://ieeexplore.ieee.org/iel7/12/8287085/08027054.pdf
+    authors: Dan Huang, Dezhi Han, Jun Wang, Jiangling Yin, Xunchao Chen, Xuhong Zhang, Jian Zhou, Mao Ye.
+    publisher: IEEE Transactions on Computers.
+
+  - title: Understanding and Alleviating the Impact of the Flash Address Translation on Solid State Devices
+    short: ToS 2017
+    url: https://dl.acm.org/citation.cfm?id=3051123
+    authors: You Zhou, Fei Wu, Ping Huang, Xubin He, Changsheng Xie, Jian Zhou.
+    publisher: ACM Transactions on Storage (TOS).
+
+  - title: "TEES: A novel multiple criteria optimization scheme for temperature-constrained energy efficient storage"
+    short: JPDC 2016
+    authors: Jian Zhou, Jun Wang, Fei Wu, and Changsheng Xie.
+    publisher: Journal of Parallel and Distributed Computing.
+    url: https://www.sciencedirect.com/science/article/pii/S0743731516300405
+
+  - title: "PERP: Attacking the balance among energy, performance and recovery in storage systems"
+    short: JPDC 2015
+    url: https://www.sciencedirect.com/science/article/pii/S0743731514002251
+    authors: Junyao Zhang, Qingdong Wang, Jiangling Yin, Jian Zhou, Jun Wang.
+    publisher: Journal of Parallel and Distributed Computing.

@@ -1,0 +1,31 @@
+name: Workshop & Poster
+order: 3
+publications:
+  - title: "DFS-container: achieving containerized block I/O for distributed file systems"
+    url: https://dl.acm.org/citation.cfm?id=3132568
+    authors: Dan Huang, Jun Wang, Qing Liu, Xuhong Zhang, Xunchao Chen, Jian Zhou.
+    publisher: SoCC '17 Proceedings of the 2017 Symposium on Cloud Computing.
+
+  - title: Leveraging Semantic Links for High Efficiency Page-Level FTL Design
+    authors: Jian Zhou, Xunchao Chen, Jun Wang, Fei Wu, You Zhou, Changsheng Xie.
+    url: https://ieeexplore.ieee.org/abstract/document/7756214
+    publisher: 2016 IEEE 36th International Conference on Distributed Computing Systems Workshops (ICDCSW).
+
+  - title: "ApproxSSD: Fast Data Sampling on SSD Arrays"
+    publisher: Sixth Workshop on Architectures and Systems for Big Data ( ASBD 2016 ). Held in conjunction with The 43st International Symposium on Computer Architecture (ISCA 2016).
+    authors: Jian Zhou, Xunchao Chen, Jun Wang.
+    url: http://acs.ict.ac.cn/asbd2016/Papers/ASBD2016_paper_2.pdf
+
+  - title: Develop A Fast Flash Translation Layer by Exploiting Block-Level I/O Correlation
+    url: http://nvmw.eng.ucsd.edu/2016/speakerinfo/18
+    publisher: 7th Annual Non-Volatile Memories Workshop 2016.
+
+  - title: On Balance among Energy, Performance and Recovery in Storage Systems
+    url: https://ieeexplore.ieee.org/document/6888848
+    publisher: ICDCSW 2014
+  
+  - title: "MIND: A Black-Box Energy Consumption Model for Disk Arrays"
+    short: IGCC 2011
+    authors: Zhuo Liu, Jian Zhou, Weikuan Yu, Fei Wu, Xiao Qin, Changsheng Xie.
+    publisher: 2011 International Green Computing Conference.
+    url: https://ieeexplore.ieee.org/document/6008571

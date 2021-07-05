@@ -1,0 +1,68 @@
+name: Conference
+order: 1
+publications:
+  - title: "Lelantus: Fine-Granularity Copy-On-Write Operations for Secure Non-Volatile Memories"
+    short: ISCA 2020
+    authors: Jian Zhou, Amro Awad, Jun Wang.
+    publisher: International Symposium on Computer Architecture.
+    url: https://www.iscaconf.org/isca2020/papers/466100a597.pdf
+
+  - title: "Lelantus: Fine-Granularity Copy-On-Write Operations for Secure Non-Volatile Memories"
+    short: ISCA 2020
+    authors: Jian Zhou, Amro Awad, Jun Wang.
+    publisher: International Symposium on Computer Architecture.
+    url: https://www.iscaconf.org/isca2020/papers/466100a597.pdf
+
+  - title: "ArchSampler: Architecture-Aware Memory Sampling Library for In-Memory Applications"
+    short: ICCD 2018
+    authors: Jian Zhou, Jun Wang.
+    publisher: IEEE International Conference on Computer Design.
+    url: https://par.nsf.gov/servlets/purl/10090056
+
+  - title: Promoting MLC STT-RAM for the Future Persistent Memory System
+    short: DASC 2017
+    authors: Xunchao Chen, Jun Wang, Jian Zhou.
+    publisher: IEEE Intl. Dependable, Autonomic and Secure Computing.
+    url: https://ieeexplore.ieee.org/abstract/document/8328533/
+
+  - title: FPGA-based failure mode testing and analysis for MLC NAND flash memory
+    short: DATE 2017
+    url: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7927029
+    authors: Meng Zhang and Fei Wu and He Huang and Qian Xia and Jian Zhou and Changsheng Xie.
+    publisher: IEEE Design, Automation & Test in Europe Conference & Exhibition.
+
+  - title: "DataNet: A Data Distribution-aware Method for Sub-dataset Analysis on Distributed File Systems"
+    short: IPDPS 2016
+    url: https://ieeexplore.ieee.org/document/7516047
+    authors: Jun Wang, Jiangling Yin, Jian Zhou, Xuhong Zhang, Ruijun Wang.
+    publisher: IEEE International Parallel and Distributed Processing Symposium.
+
+  - title: "AOS: Adaptive Overwrite Scheme for Energy Efficient MLC STT-RAM Cache"
+    short: DAC 2016
+    url: http://cal.ucf.edu/conf/DAC-AOS.pdf
+    authors: Xunchao Chen, Navid Khoshavi, Jian Zhou, Dan Huang, Ronald F. DeMara, Jun Wang.
+    publisher: ACM/EDAC/IEEE Design Automation Conference.
+
+  - title: On the Cooling of Energy Efficient Storage
+    short: NAS 2015
+    authors: Jian Zhou, Jun Wang, Fei Wu, Changsheng Xie, Dezhi Han.
+    url: https://ieeexplore.ieee.org/document/7255212
+    publisher: IEEE International Conference on Networking, Architecture and Storage.
+
+  - title: An Efficient Page-level FTL to Optimize Address Translation in Flash Memory
+    short: EuroSys 2015
+    authors: You Zhou, Fei Wu, Ping Huang, Xubin He, Changsheng Xie, Jian Zhou.
+    url: http://or.nsfc.gov.cn/bitstream/00001903-5/153199/1/1000013838900.pdf
+    publisher: European Conference on Computer Systems .
+
+  - title: "Opass: Analysis and Optimization of Parallel Data Access on Distributed File Systems"
+    short: IPDPS 2015
+    authors: Jiangling Yin, Jun Wang, Jian Zhou, Tyler Lukasiewicz, Dan Huang, Junyao Zhang.
+    url: https://janzhou.org/publication/yin2015opass
+    publisher: IEEE International Parallel and Distributed Processing Symposium.
+
+  - title: "TRACER: A Trace Replay Tool to Evaluate Energy-Efficiency of Mass Storage Systems"
+    short: Cluster 2010
+    authors: Zhuo Liu, Fei Wu, Xiao Qin, Changsheng Xie, Jian Zhou, Jianzong Wang.
+    url: https://ieeexplore.ieee.org/document/5600321
+    publisher: IEEE International Conference on Cluster Computing.

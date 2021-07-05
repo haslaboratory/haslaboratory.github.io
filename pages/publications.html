@@ -1,0 +1,17 @@
+---
+title: Publications
+layout: page
+permalink: /publications.html
+---
+
+{% assign sorted = site.data.publications | sort: order %}
+{% for collections in sorted %}
+{% assign collection = collections[1] %}
+<h2>{{collection.order}}. {{collection.name}} ({{collection.publications.size}})</h2>
+{{collection.desc}}
+{% for publication in collection.publications %}
+<li>
+  <b>{{publication.short}}</b> <a href="{{ publication.url }}">{{publication.title}}</a>. {{publication.authors}} {{publication.publisher}}
+</li>
+{% endfor %}
+{% endfor %}
