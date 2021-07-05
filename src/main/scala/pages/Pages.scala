@@ -2,7 +2,7 @@ package pages
 
 import org.scalajs.dom._
 import org.scalajs.dom.ext._
-import org.scalajs.dom.raw.HTMLElement
+import org.scalajs.dom.raw.{HTMLElement, HTMLInputElement}
 
 object Pages {
     def navbar = {
@@ -25,8 +25,27 @@ object Pages {
         }})
     }
 
+    def search = {
+        val ins = document.querySelectorAll("input.search-in").map(_ match {
+            case in:HTMLInputElement => in
+        })
+
+        val outs = document.querySelectorAll("input.search-out").map(_ match {
+            case out:HTMLInputElement => out
+        })
+
+        ins.map(in => {
+            in.addEventListener("change", {e:Event => {
+                val in_key = in.value
+                val out_key = s"site:haslab.org ${in.value}"
+                ins.map(_.value = in_key)
+                outs.map(_.value = out_key)
+            }})
+        })
+    }
+
     def main(args: Array[String]):Unit = {
         navbar
-        println("pages!!!")
+        search
     }
 }
