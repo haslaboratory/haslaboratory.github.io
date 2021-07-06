@@ -13,3 +13,7 @@ order: 1
 - MIT [6.004 Computation Structures](https://6004.mit.edu/)
 - UC Berkeley [CS 61C: Great Ideas in Computer Architecture (Machine Structures)](https://cs61c.org/)
 - Stanford [Computer Organization & Systems](https://web.stanford.edu/class/cs107/)
+
+# 相关资源
+
+- [大萝卜---组成原理考研复习思维导图（2021版）](https://mubu.com/explore/2H36wIdHWE0)
