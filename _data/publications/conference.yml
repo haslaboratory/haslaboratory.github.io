@@ -1,11 +1,16 @@
 name: Conference
-order: 1
 publications:
-  - title: "Lelantus: Fine-Granularity Copy-On-Write Operations for Secure Non-Volatile Memories"
-    short: ISCA 2020
-    authors: Jian Zhou, Amro Awad, Jun Wang.
-    publisher: International Symposium on Computer Architecture.
-    url: https://www.iscaconf.org/isca2020/papers/466100a597.pdf
+  - title: "Remap-SSD: Safely and Efficiently Exploiting {SSD} Address Remapping to Eliminate Duplicate Writes"
+    short: FAST 2021
+    authors: You Zhou, Qiulin Wu, Fei Wu, Hong Jiang, Jian Zhou, Changsheng Xie.
+    publisher: USENIX Conference on File and Storage Technologies.
+    url: https://www.usenix.org/system/files/fast21-zhou.pdf
+
+  - title: "Disperse Access Considered Energy Inefficiency in Intel Optane DC Persistent Memory Servers"
+    short: ICDCS 2020
+    authors: Daping Li, Jiguang Wan, Jun Wang, Jian Zhou, Kai Lu, Peng Xu, Fei Wu, Changsheng Xie.
+    publisher: International Conference on Distributed Computing Systems.
+    url: https://ieeexplore.ieee.org/abstract/document/9355739/
 
   - title: "Lelantus: Fine-Granularity Copy-On-Write Operations for Secure Non-Volatile Memories"
     short: ISCA 2020
