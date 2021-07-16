@@ -29,7 +29,7 @@ layout: bulma
                         <li>
                             <a href="{{ site.baseurl }}{{ post.url }}">
                                 {{ post.title }}
-                                {% for tag in post.tags %}
+                                {% for tag in post.tags | limit:3 %}
                                 <span class="tag is-small is-link is-light">{{ tag }}</span>
                                 {% endfor %}
                             </a>

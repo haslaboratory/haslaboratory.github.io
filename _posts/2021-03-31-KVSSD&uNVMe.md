@@ -3,7 +3,8 @@ layout: post
 title: KVSSD & uNVMe 代码阅读
 author: Jianfeng Wu
 tags:
-    - KVSSD
+    - Key Value
+    - SSD
 ---
 
 # KVSSD & uNVMe

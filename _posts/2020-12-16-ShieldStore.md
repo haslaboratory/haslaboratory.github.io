@@ -6,7 +6,7 @@ tags:
  - Eurosys
  - 2019
  - Security
- - Key-Value Store
+ - Key Value
 ---
 
 # [ShieldStore: Shielded In-memory Key-value Storage with SGX](http://calab.kaist.ac.kr:8080/~jhuh/papers/kim_eurosys19_shieldst.pdf)

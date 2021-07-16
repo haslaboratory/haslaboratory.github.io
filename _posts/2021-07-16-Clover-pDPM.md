@@ -3,8 +3,10 @@ layout: post
 title: "Clover: 计算与存储被动分离的分布式键值存储系统"
 author: Hao Yang
 tags:
+    - ATC
+    - 2020
     - RDMA
-    - Persistent Memory
+    - Persist Memory
     - Key Value
 ---
 
