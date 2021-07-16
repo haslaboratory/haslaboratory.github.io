@@ -1,6 +1,13 @@
 {% assign user = site.data.members | where:"nick", include.nick | first %}
 
+{% if user != nil %}
 <a href="/members/#{{ user.nick | slugify }}" class="tags has-addons">
   <span class="tag icon is-dark"><i class="far fa-user"></i></span>
   <span class="tag is-info">{{ user.name }} ({{ user.nick }})</span>
 </a>
+{% else %}
+<a class="tags has-addons">
+  <span class="tag icon is-dark"><i class="far fa-user"></i></span>
+  <span class="tag is-info">{{ include.nick }}</span>
+</a>
+{% endif %}
