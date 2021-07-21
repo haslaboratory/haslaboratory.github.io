@@ -25,11 +25,11 @@ layout: bulma
                 <aside class="menu">
                     <p class="menu-label">最新文章</p>
                     <ul class="menu-list">
-                        {% for post in site.posts limit: 10 %}
+                        {% for post in site.posts limit:10 %}
                         <li>
                             <a href="{{ site.baseurl }}{{ post.url }}">
                                 {{ post.title }}
-                                {% for tag in post.tags | limit:3 %}
+                                {% for tag in post.tags limit:3 %}
                                 <span class="tag is-small is-link is-light">{{ tag }}</span>
                                 {% endfor %}
                             </a>
