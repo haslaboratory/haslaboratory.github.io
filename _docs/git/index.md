@@ -1,7 +1,9 @@
 ---
+title: Git版本管理
 layout: doc
-title: 如何使用Git？
-order: 201
+section: true
+doc: 2
+order: 200
 ---
 
 ## Git使用方法 
