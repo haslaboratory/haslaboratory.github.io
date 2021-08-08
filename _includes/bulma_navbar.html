@@ -54,10 +54,10 @@
                     </a>
                 
                     <div class="navbar-dropdown">
-                        {% assign courses = site.courses | where_exp: "item", "item.doc > 0" | sort: "doc", "last" %}
-                        {% for course in courses %}
-                        <a class="navbar-item" href="{{ course.url }}">
-                            {{ course.title }}
+                        {% assign lectures = site.lectures | where_exp: "item", "item.doc > 0" | sort: "doc", "last" %}
+                        {% for lecture in lectures %}
+                        <a class="navbar-item" href="{{ lecture.url }}">
+                            {{ lecture.title }}
                         </a>
                         {% endfor %}
                     </div>

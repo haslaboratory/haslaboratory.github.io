@@ -7,7 +7,7 @@ collections:
   docs:
     title: 文档
     output: true
-  courses:
+  lectures:
     title: 课程
     output: true
 
