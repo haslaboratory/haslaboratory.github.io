@@ -1,7 +1,6 @@
 ---
 title: 课程安排
 layout: doc
-doc: 202109
 order: 2
 ---
 
