@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Batch-Aware Unified Memory: 面向GPU的批处理式统一内外存管理"
+title: "Batch-Aware Unified Memory: 面向GPU的批处理式统一内存管理"
 author: Jian Zhou
 tags:
     - ASPLOS
