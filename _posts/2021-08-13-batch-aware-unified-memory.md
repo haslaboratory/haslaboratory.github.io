@@ -2,6 +2,7 @@
 layout: post
 title: "Batch-Aware Unified Memory: 面向GPU的批处理式统一内存管理"
 author: Jian Zhou
+issue: 1
 tags:
     - ASPLOS
     - 2020

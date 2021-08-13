@@ -1,9 +1,9 @@
 <div class="field is-grouped is-grouped-multiline">
     <div class="control">
-        <div class="tags has-addons">
+        <a {% if page.issue %} href="https://git.haslab.org/haslab/papers/issues/{{ page.issue }}" {% endif %} class="tags has-addons">
             <span class="tag icon is-dark"><i class="far fa-calendar"></i></span>
             <span class="tag is-info"> {{ page.date | date: "%Y-%m-%d" }} </span>
-        </div>
+        </a>
     </div>
 
     <div class="control">
