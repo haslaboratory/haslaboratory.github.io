@@ -4,9 +4,7 @@ title: Linux/mprotect源码分析
 author: Liu Shi
 tags:
     - Linux
-    - Memory management
-    - System call
-    - Mprotect
+    - Virtual Memory
 ---
 
 # 1. 写在前面

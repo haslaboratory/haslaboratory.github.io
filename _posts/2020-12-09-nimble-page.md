@@ -5,8 +5,8 @@ author: Weizhou Huang
 tags:
  - ASPLOS
  - 2019
- - Virtual memory
- - Huge pages
+ - Virtual Memory
+ - Huge Pages
 ---
 
 # [Nimble Page Management for Tiered Memory Systems](http://www.cs.yale.edu/homes/abhishek/ziyan-asplos19.pdf)

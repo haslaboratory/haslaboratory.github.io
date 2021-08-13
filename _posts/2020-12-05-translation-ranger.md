@@ -5,9 +5,8 @@ author: Weizhou Huang
 tags:
  - ISCA
  - 2019
- - Virtual memory
- - Huge pages
- - TLB
+ - Virtual Memory
+ - Huge Pages
 ---
 
 # [Translation Ranger: Operating System Support for Contiguity-Aware TLBs](https://www.cs.yale.edu/homes/abhishek/ziyan-isca19.pdf) 

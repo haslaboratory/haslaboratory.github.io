@@ -5,8 +5,8 @@ author: Weizhou Huang
 tags:
  - ISCA
  - 2020
- - Virtual memory
- - Huge pages
+ - Virtual Memory
+ - Huge Pages
 ---
 
 # [Tailored Page Sizes](https://conferences.computer.org/isca/pdfs/ISCA2020-4QlDegUf3fKiwUXfV0KdCm/466100a900/466100a900.pdf)

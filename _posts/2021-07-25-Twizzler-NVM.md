@@ -5,10 +5,8 @@ author: Jintian Wu
 tags:
     - ATC
     - 2020
-    - a Data-Centric OS
+    - Data-Centric
     - NVM
-    - Persistent Data
-
 ---
 
 # 论文阅读笔记

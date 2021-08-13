@@ -3,10 +3,11 @@ layout: post
 title: "Batch-Aware Unified Memory: 面向GPU的批处理式统一内外存管理"
 author: Jian Zhou
 tags:
-    - Asplos
+    - ASPLOS
     - 2020
     - GPUs
     - Unified Memory
+    - Virtual Memory
 ---
 
 **Batch-Aware Unified Memory Management in GPUs for Irregular Workloads**
