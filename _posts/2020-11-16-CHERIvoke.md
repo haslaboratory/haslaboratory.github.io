@@ -17,21 +17,21 @@ tags:
 ### 1.1 时间安全漏洞
 
 - 内存块被释放后，其对应的指针没有被设置为NULL，这个指针就被悬空了，形成了悬空指针（Dangling Pointer）。在它下一次使用之前，有其它代码对这块内存行了修改，那么当程序再次使用这块内存时，就很有可能会出现安全性问题。
-- <div style="align: center"><img alt="Use After Free" src="../images/CHERIvoke/2020-11-16-use-after-free.jpg" width="400x"></div>
+- <div style="align: center"><img alt="Use After Free" src="/images/CHERIvoke/2020-11-16-use-after-free.jpg" width="400x"></div>
 - 为了避免出现悬空指针，需要在释放内存时将指针置为NULL。访问指针变量前，先判断是否为NULL，可以避免出现上述安全漏洞。但是当多个指针指向同一个内存块，就需要将所有指针变量的值都置为NULL。这就需要维护相应的元数据，开销会非常大。
 
 ### 1.2 CHERI指令集扩展
 
 [CHERI](https://murdoch.is/papers/cl14cheriisa.pdf) (Capability Hardware Enhanced RISC Instructions) 是一种新的体系结构扩展，其中指针被扩展为原来的两倍大小(称为Capability)，扩展部分用于记录引用地址范围及权限等。
 
-<img src="../images/CHERIvoke/2020-12-07-CHERI.png">
+<img src="/images/CHERIvoke/2020-12-07-CHERI.png">
 
 ## 2 设计
 
 ### 2.1 关键
 
 - 延迟所释放内存的重分配，直到完全清理其引用。
-- <div style="align: center"><img alt="Overview" src="../images/CHERIvoke/2020-12-07-overview.png" width="400x"></div>
+- <div style="align: center"><img alt="Overview" src="/images/CHERIvoke/2020-12-07-overview.png" width="400x"></div>
 
 ### 2.2 软件优化
 
@@ -46,13 +46,13 @@ tags:
 ### 2.4 清理流程
 
 - 清理过程中，先扫描隔离缓冲区，将每个条目所对应的影子映射表位设置为一。然后按双字大小（64位机器中为128位）扫描堆内存，检查其（1）是否为CHERI指针；（2）所指向地址的影子映射位是否为一。均为是就将该CHERI指针置零。
-- <div style="align: center"><img alt="Clean Process" src="../images/CHERIvoke/2020-12-07-cleanprocess.png" width="400x"></div>
+- <div style="align: center"><img alt="Clean Process" src="/images/CHERIvoke/2020-12-07-cleanprocess.png" width="400x"></div>
 
 ## 3 实验
 
 ### 3.1 实验设置
 
-- 系统参数： </br> <div style="align: center"><img alt="System Config" src="../images/CHERIvoke/2020-12-07-SystemConfig.png" width="400x"></div>
+- 系统参数： </br> <div style="align: center"><img alt="System Config" src="/images/CHERIvoke/2020-12-07-SystemConfig.png" width="400x"></div>
 - 分配器：dlmalloc_cherivoke。
 - 工作负载：dealII、omnetpp、xalancbmk（分配操作多）;
     SPEC CPU2006（通用）。
@@ -61,12 +61,12 @@ tags:
 
 #### 3.2.1 整体评估
 
-- <div style="align: center"><img alt="Overhead" src="../images/CHERIvoke/2020-12-07-Overhead.png" width="700x"></div>
+- <div style="align: center"><img alt="Overhead" src="/images/CHERIvoke/2020-12-07-Overhead.png" width="700x"></div>
 - CHERIvoke使用了平均4.7%执行时间、12.5%内存空间的开销，最大51%执行时间、35%内存空间的开销，远远优于其他同等设计。
 
 #### 3.2.2 开销细分
 
-- <div style="align: center"><img alt="Breakdown" src="../images/CHERIvoke/2020-12-07-breakdown.png" width="450x"></div>
+- <div style="align: center"><img alt="Breakdown" src="/images/CHERIvoke/2020-12-07-breakdown.png" width="450x"></div>
 - 通常情况下，隔离缓冲区占了大部分开销。
 - 一些异常情况：
   - xalancbmk的隔离缓冲区开销令执行时间增加22%。这是因为该负载下，分配粒度小，吞吐量大，且分配的生命周期大。

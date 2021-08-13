@@ -30,7 +30,7 @@ tags:
 
 在当前的操作系统设计中,易失性内存和高延迟持久性存储的分离要求操作系统管理数据的临时副本并在持久性操作中介入。如下图所示,获得持久性的旧方式:将显式加载到易失性内存中的数据反序列化,再使用该数据,而后重新序列化,然后显式地将它存储到磁盘中。
 
-![持久化数据](../images/2021-07-25-note-Twizzler/serialization-process.png)
+![持久化数据](/images/2021-07-25-note-Twizzler/serialization-process.png)
 
 当前的持久化数据操作,其标志是有大量内核参与、需要数据序列化。但是,将低延迟可直接附加的 NVM 引入内存层次结构,这种核心设计显然是不足的,无法有效的利用 NVM 的优点。
 
@@ -78,7 +78,7 @@ tags:
 ## 3. Twizzler的设计
 
 Twizzler 是一个独立的内核,并在用户空间运行时为程序提供执行支持。下图显示了系统组织的概览以及系统的不同部分如何对数据对象进行操作。
- ![Twizzler系统预览](../images/2021-07-25-note-Twizzler/Twizzler-system-overvie.png)
+ ![Twizzler系统预览](/images/2021-07-25-note-Twizzler/Twizzler-system-overvie.png)
 
 Twizzler 的内核为用户空间库 **(称为libtwz)** 提供足够的服务,为应用程序提供执行环境。libtwz的主要工作是管理持久对象到地址空间的映射并处理持久指针。
 
@@ -117,7 +117,7 @@ Twizzler 提供跨对象的持久指针,指针不是指向虚拟地址,而是通
 
 - 取消引用时,Twizzler 使用指针的FOT_idx部分作为 FOT 的索引,检索对象 ID。FOT 和跨对象指针的组合在逻辑上形成了一个object-id:offset对。
 
- ![持久指针示图](../images/2021-07-25-note-Twizzler/Persistent-Pointer.png)
+ ![持久指针示图](/images/2021-07-25-note-Twizzler/Persistent-Pointer.png)
 
 - 此外,Twizzler 将数据对象的命名空间扩展到一台机器之外,独立于机器的数据引用是跨对象指针的自然结果。
 
@@ -172,7 +172,7 @@ Twizzler做出的一个关键设计选择是对安全性的后期绑定。
 
 在 twzkv 中实现访问控制涉及让索引引用多个数据对象中的数据,为这些对象分配不同的访问权限,并根据所需的访问权限从这些对象中进行分配。由于 Twizzler 的跨对象指针的透明性,我们能够在保留原始代码的同时实现这一点。在插入时,应用程序指示要将数据复制到的数据对象,如下图所示。
 
- ![twzkv中的跨对象指针](../images/2021-07-25-note-Twizzler/Cross-object-pointer.png)
+ ![twzkv中的跨对象指针](/images/2021-07-25-note-Twizzler/Cross-object-pointer.png)
 
 通过支持多个数据对象,twzkv可以利用操作系统的访问控制,避免复杂性。无限制数据可以进入 D0 ,而受限数据可以进入D1。由于每个对象都有不同的访问控制,用户可以设置对象的访问权限,然后根据策略决定插入数据的位置。无论数据对象的访问限制如何,索引都指向正确的位置,并且twzkv仍然分发直接指针,但是被限制访问 D1 中的数据的用户将无法取消引用该指针。
 
@@ -204,7 +204,7 @@ Twizzler做出的一个关键设计选择是对安全性的后期绑定。
 
 > 基准测试程序(Benchmark): 是用来测量机器的硬件最高实际运行性能,以及软件优化的性能提升效果。
 
- ![基准测试](../images/2021-07-25-note-Twizzler/Benchmark.png)
+ ![基准测试](/images/2021-07-25-note-Twizzler/Benchmark.png)
 
 上表显示了常见的 Twizzler 函数的延迟,包括指针转换。显示的解析指针的开销不包括取消引用最终结果,因为无论指针如何解析都是必需的。
 
@@ -219,15 +219,15 @@ SQL-Native 以mmap模式运行,因此它和 SQL-LMDB 都使用mmap来访问数�
 
 在标准 YCSB 工作负载下的吞吐量：
 
- ![YCSB测试](../images/2021-07-25-note-Twizzler/YCSB-Workload.png)
+ ![YCSB测试](/images/2021-07-25-note-Twizzler/YCSB-Workload.png)
 
 一百万行表上的查询延迟,测量了计算均值和中值、排序行、查找特定行、构建索引和探测索引的性能：
 
- ![查询延迟](../images/2021-07-25-note-Twizzler/Query-latency.png)
+ ![查询延迟](/images/2021-07-25-note-Twizzler/Query-latency.png)
 
 通过插入一百万个不同的键值对,然后按顺序查找每个键值对,将twzkv与unixkv进行了比较：
 
- ![插入并顺序查询的延迟](../images/2021-07-25-note-Twizzler/Latency-of-insert-and-lookup.png)
+ ![插入并顺序查询的延迟](/images/2021-07-25-note-Twizzler/Latency-of-insert-and-lookup.png)
 
 - 在unixrbt和twzrbt上测量了插入和查找 100 万个 32 位整数的延迟。twzrbt的插入和查找延迟为 528±3 ns和 251.8±0.5 ns而unixrbt 的插入和查找延迟分别为 515±2 ns 和 213±1 ns。适度的开销伴随着显着提高的灵活性,因为unixrbt不支持跨对象树,并且支持代码较少(unixrbt手动实现映射和指针转换)。
 

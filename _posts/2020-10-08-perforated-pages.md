@@ -26,7 +26,7 @@ tags:
 
 <center>
 
-<img src="../images/perforated-page-idea.png" width="75%" />
+<img src="/images/perforated-page-idea.png" width="75%" />
 
 图 1 设计思想
 
@@ -54,7 +54,7 @@ tags:
 
 <center>
 
-<img src="../images/perforated-page-PTE.png" width="75%" />
+<img src="/images/perforated-page-PTE.png" width="75%" />
 
 图 2 页表修改
 
@@ -63,7 +63,7 @@ tags:
 
 <center>
 
-<img src="../images/perforated-page-查询逻辑.png" width="100%" />
+<img src="/images/perforated-page-查询逻辑.png" width="100%" />
 
 图 3 MMU地址转换过程
 

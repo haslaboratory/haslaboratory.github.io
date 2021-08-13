@@ -20,7 +20,7 @@ Linux虚拟内存机制将虚拟地址到物理地址的映射信息以PTE的形
 
 **问题在于**，虽然大页映射可以减少总的PTE数量，从而缓解TLB命中率低的问题，但是由于现有系统支持的大页映射仅支持2MB和1GB，2MB的粒度仍然过小，不足以有效减少总的PTE数量，而1GB大页映射会造成内存浪费和碎片化问题。缺少一种灵活尺寸的页映射机制来提升TLB缓存的效率。
 <center>
-<img src="../images/tailored-page-sizes-pagewalk_overhead.png" width="75%" height="65%" />
+<img src="/images/tailored-page-sizes-pagewalk_overhead.png" width="75%" height="65%" />
 
 图 1  访问内存页表占应用总执行时间
 </center>
@@ -36,7 +36,7 @@ Linux虚拟内存机制将虚拟地址到物理地址的映射信息以PTE的形
 基于上述设计思想，对于特殊尺寸的页映射（非4KB，2MB），只需使用PTE的一位保留位（第63位）标记出来即可实现TPS。
 
 <center>
-<img src="../images/tailored-page-sizes-PTE.png" width="95%" height="65%" />
+<img src="/images/tailored-page-sizes-PTE.png" width="95%" height="65%" />
 
 图 2  通过PTE的1个保留位判断页映射尺寸
 </center>
@@ -47,7 +47,7 @@ Linux虚拟内存机制将虚拟地址到物理地址的映射信息以PTE的形
 
 
 <center>
-<img src="../images/tailored-page-sizes-TLB.png" width="75%" height="55%" />
+<img src="/images/tailored-page-sizes-TLB.png" width="75%" height="55%" />
 
 图 3  TLB硬件修改
 </center>

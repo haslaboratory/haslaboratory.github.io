@@ -33,7 +33,7 @@ tags:
 
 <center>
 
-<img src="../images/nimble-page-异构内存.png" width="60%" />
+<img src="/images/nimble-page-异构内存.png" width="60%" />
 
 图 1 未来异构内存系统
 
@@ -43,7 +43,7 @@ tags:
 
 <center>
 
-<img src="../images/nimble-page-步骤.png" width="60%" />
+<img src="/images/nimble-page-步骤.png" width="60%" />
 
 图 2 页迁移过程分解 
 
@@ -70,7 +70,7 @@ tags:
 
 <center>
 
-<img src="../images/nimble-page-page-copy.png" width="75%" />
+<img src="/images/nimble-page-page-copy.png" width="75%" />
 
 图 3 并发页拷贝
 
@@ -80,7 +80,7 @@ tags:
 
 <center>
 
-<img src="../images/nimble-page-swap.png" width="95%" />
+<img src="/images/nimble-page-swap.png" width="95%" />
 
 图 4 单步页交换
 

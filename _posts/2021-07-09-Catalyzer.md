@@ -27,7 +27,7 @@ gVisor启动时首先进行准备工作，分为四项操作：
 
 这些准备工作按下图的顺序进行（以Java应用为例）：
 
-![gVisor Boot Process](../images/2021-07-09-catalyzer/boot_process.png)
+![gVisor Boot Process](/images/2021-07-09-catalyzer/boot_process.png)
 
 图中，Restore路线为从保存的状态恢复时执行的路线，Reconnect IO操作为将保存的文件描述符对应的文件重新打开。
 
@@ -37,7 +37,7 @@ Catalyzer基于Checkpoint/Restore(C/R)的思想解决问题。所谓C/R，是指
 
 Catalyzer有三种工作方式，见下图：Cold boot, 即C/R方式中的Restore, 将硬盘中保存的状态装入内存；Warm boot, 即共享现有的已经在运行的沙盒实例中的部分内存，避免一部分内存复制，但由于要实现沙盒之间的隔离，文件需要重新打开；Fork boot, 即通过定义的新系统调用sfork, sandbox fork, 配合Overlay RootFS, 进一步优化性能。
 
-![Catalyzer Overview](../images/2021-07-09-catalyzer/catalyzer_overview.png)
+![Catalyzer Overview](/images/2021-07-09-catalyzer/catalyzer_overview.png)
 
 ### 3.1 Overlay Memory
 
@@ -61,7 +61,7 @@ C/R 方法在恢复阶段要根据持有的文件描述符重新打开文件。�
 
 Sfork 的基本示意图如图。
 
-![Sandbox Fork](../images/2021-07-09-catalyzer/sandbox_fork.png)
+![Sandbox Fork](/images/2021-07-09-catalyzer/sandbox_fork.png)
 
 #### 3.4.1 OverlayFS
 

@@ -29,7 +29,7 @@ tags:
 
 
 
-![传统模式](../images/2021-07-16-atc20-note/non-disaggregation.png)
+![传统模式](/images/2021-07-16-atc20-note/non-disaggregation.png)
 
 
 
@@ -69,7 +69,7 @@ aDPM的架构如下图所示
 
 
 
-![aDPM](../images/2021-07-16-atc20-note//aDPM.png)
+![aDPM](/images/2021-07-16-atc20-note//aDPM.png)
 
 
 
@@ -85,7 +85,7 @@ aDPM的架构如下图所示
 
 
 
-![pDPM](../images/2021-07-16-atc20-note/pDPM.png)
+![pDPM](/images/2021-07-16-atc20-note/pDPM.png)
 
 
 
@@ -101,7 +101,7 @@ aDPM的架构如下图所示
 
 
 
-![pDPM-Direct](../images/2021-07-16-atc20-note/pDPM-Direct.png)
+![pDPM-Direct](/images/2021-07-16-atc20-note/pDPM-Direct.png)
 
 
 
@@ -139,7 +139,7 @@ pDPM-Direct采用的方式相当于将数据的处理分散到每一个计算节
 
 
 
-![pDPM-Central](../images/2021-07-16-atc20-note/pDPM-Central.png)
+![pDPM-Central](/images/2021-07-16-atc20-note/pDPM-Central.png)
 
 
 
@@ -177,7 +177,7 @@ Clover采取的模式是对以上两种方式的混合，它将数据和元数�
 
 
 
-![Clover](../images/2021-07-16-atc20-note/Clover.png)
+![Clover](/images/2021-07-16-atc20-note/Clover.png)
 
 
 
@@ -203,7 +203,7 @@ Clover采取的模式是对以上两种方式的混合，它将数据和元数�
 
 
 
-![Data plane](../images/2021-07-16-atc20-note/data_plane.png)
+![Data plane](/images/2021-07-16-atc20-note/data_plane.png)
 
 
 
@@ -227,7 +227,7 @@ Clover采取的模式是对以上两种方式的混合，它将数据和元数�
 
 
 
-![Metadata plane1](../images/2021-07-16-atc20-note/metadata_plane1.png)
+![Metadata plane1](/images/2021-07-16-atc20-note/metadata_plane1.png)
 
 
 
@@ -235,7 +235,7 @@ Clover采取的模式是对以上两种方式的混合，它将数据和元数�
 
 
 
-![Metadata plane2](../images/2021-07-16-atc20-note/metada_plane2.png)
+![Metadata plane2](/images/2021-07-16-atc20-note/metada_plane2.png)
 
 
 

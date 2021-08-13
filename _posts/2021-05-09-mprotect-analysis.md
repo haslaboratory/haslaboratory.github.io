@@ -122,12 +122,12 @@ Linux虚拟内存三级页表寻址，其中：
 - PGD: page global directory
 - PMD: page middle directory
 - PTE: page table entry
-![](../images/2021-05-09-linux-mprotect/addr_page.png)
+![](/images/2021-05-09-linux-mprotect/addr_page.png)
 
 
 虚拟地址利用3级页表访问物理内存：
 
-![](../images/2021-05-09-linux-mprotect/page_table_layout.png)
+![](/images/2021-05-09-linux-mprotect/page_table_layout.png)
 
 
 ## 3.2. 数据结构

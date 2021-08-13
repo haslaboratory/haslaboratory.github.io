@@ -98,11 +98,11 @@ tags:
 
 - 客户端进程：
 
-![client](../images/2021-03-18/redis-cli.svg)
+![client](/images/2021-03-18/redis-cli.svg)
 
 - 服务器进程：
 
-![server](../images/2021-03-18/redis-server-get.svg)
+![server](/images/2021-03-18/redis-server-get.svg)
 
 ## 6. Redis及Memcached客户端主要代码
 

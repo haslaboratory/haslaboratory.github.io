@@ -26,7 +26,7 @@ tags:
 
 以Insert为例：
 
-![Insert](../images/2021-07-14-YCSB_trace/insert.png)
+![Insert](/images/2021-07-14-YCSB_trace/insert.png)
 
 添加的代码如上图。打开或创建名为test.txt的文件，通过FileWriter对象将Insert标识"I"、key以及value写入该文件中。
 
@@ -38,7 +38,7 @@ tags:
 
 可以将两次运行的指令写到脚本文件中，方便执行。示例如下：
 
-![Script](../images/2021-07-14-YCSB_trace/script.png)
+![Script](/images/2021-07-14-YCSB_trace/script.png)
 
 使用的负载为workloadc，可以在`YCSB-tracegen/workloads/workloadc`文件中修改其参数设置，也可以自行编写一个workload文件，并在运行YCSB时用-P指定。
 
