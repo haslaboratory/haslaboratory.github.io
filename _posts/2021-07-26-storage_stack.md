@@ -34,7 +34,7 @@ tags:
 
 在Linux的 per-core layer  queues，结合现代多队列存储和网络硬件，使存储堆栈在概念上类似于网络交换机，采用了计算机网络中的经典技术（例如，多个出口队列、单个请求的优先处理、负载均衡和交换机调度)。
 
-![image-20210716165000108](../images/2021-07-26-storage_stack/image-20210716165000108.png)
+![image-20210716165000108](/images/2021-07-26-storage_stack/image-20210716165000108.png)
 
 为了实现上述观点，block-switch为Linux存储堆栈引入了一个per-core, multi-egress queue block layer架构(图1)。应用程序使用标准的Linux api来指定其性能目标，并提交读/写请求。在底层，对于每个应用程序类别，block-switch在per-core的基础上创建一个“出口”队列，该队列映射到底层设备驱动程序的唯一队列。这种多出口队列设计允许块交换将入口队列(应用端块层)与出口队列(设备端驱动程序)解耦，因为在某一个核上的入口队列上提交的请求现在可以在任何核上的出口队列上处理。块交换就像一个“交换机”——在每个单独的核心上，块交换根据应用程序的性能目标和跨核负载（load across cores），将提交在该核心的入口队列上的请求导向一个出口队列。
 
@@ -63,7 +63,7 @@ block-switch在这样的交换架构中集成了三个思想，可以同时为L-
 
 ### 4.1测量设置
 
-![image-20210716205032466](../images/2021-07-26-storage_stack/image-20210716205032466.png)
+![image-20210716205032466](/images/2021-07-26-storage_stack/image-20210716205032466.png)
 
 表 1 总结了被评估系统（linux和SPDK）中使用的存储堆栈、网络堆栈和 CPU 调度程序。
 
@@ -79,13 +79,13 @@ SPDK 是一个基于轮询的系统，应用程序轮询它们自己的的 I/O �
 
 ### 4.2测量结果与解释
 
-![image-20210717161342587](../images/2021-07-26-storage_stack/image-20210717161342587.png)
+![image-20210717161342587](/images/2021-07-26-storage_stack/image-20210717161342587.png)
 
 图 2：当每个应用程序隔离运行时（服务器上没有其他应用程序），现有存储堆栈可以实现低延迟和高吞吐量。 然而，当多个应用程序竞争主机资源时，现有存储堆栈的性能就会出现问题——它们要么无法维持微秒级延迟（Linux 和 SPDK），要么无法维持高吞吐量（SPDK+优先级）。 随着越来越多的 L-app 与 T-app 竞争，性能进一步下降。
 
 ---
 
-![image-20210717161823769](../images/2021-07-26-storage_stack/image-20210717161823769.png)
+![image-20210717161823769](/images/2021-07-26-storage_stack/image-20210717161823769.png)
 
 图 3：图 2现象的根本原因。（左-右）(a)：Linux 由于 HoL 阻塞而产生高尾延迟。 (b)：由于 CPU 调度程序执行 CPU 资源的公平调度，SPDK 产生高尾延迟和低吞吐量，导致每个应用程序的等待时间越来越长，运行时间越来越短。 (c, d): SPDK+priority产生 T-app 的完全饥饿； 增加 L-apps 的睡眠间隔和/或 优先级会导致 T-app 吞吐量增加，但代价是 L-apps 的平均和尾部延迟增加。见 §2.2 中的详细讨论。
 
@@ -158,7 +158,7 @@ SPDK 是一个基于轮询的系统，应用程序轮询它们自己的的 I/O �
 
 ### 5.1 Block Layer is the New Switch
 
-![image-20210718151018918](../images/2021-07-26-storage_stack/image-20210718151018918.png)
+![image-20210718151018918](/images/2021-07-26-storage_stack/image-20210718151018918.png)
 
 图 4：blk-switch 的设计说明。 （左）多出口队列架构：每个设备上的前两个和后两个队列分别用于左核和右核（每个应用类一个）； （中）请求转向机制：当左核的网卡队列出现短暂拥塞时，请求被转向到右核对应的队列； （右）应用转向机制：当左核 NIC 队列持续拥塞时，T-app 被转向右核。 见 第3节 的讨论。
 
@@ -184,7 +184,7 @@ SPDK 是一个基于轮询的系统，应用程序轮询它们自己的的 I/O �
 
 做出请求转向决策需要对系统中各个核的瞬时负载进行估计。对于 I/O 是主要瓶颈的 T-apps，blk-switch 的多出口队列设计提供了一种有效的方法——使用 T-app 出口队列中未完成请求的瞬时字节和来确定瞬时 per-core 负载并将请求引导到负载较轻的核上。然而，如果没有任何额外的机制，这种方法可能会导致不完美的请求控制决策，因为它没有考虑许多其他重要因素（例如，排队延迟、请求类型为读/写、计算 I/O 比率等）；目前有大量关于估计核负载的研究，并且这些机制中的任何一个都可以纳入 blk-switch 决策制定中。
 
-![image-20210718160942757](../images/2021-07-26-storage_stack/image-20210718160942757.png)
+![image-20210718160942757](/images/2021-07-26-storage_stack/image-20210718160942757.png)
 
 算法 1 显示了 blk-switch 的请求控制机制的通用框架。blk-switch 以单个请求的粒度执行请求控制。提交请求后，blk-switch 首先检查本地核是否可用：如果本地核上的负载小于阈值，则认为本地核心可用，并将请求排入其出口队列。这是为了确保 blk-switch 仅在必要时产生请求转向的开销。如果本地核心过载，blk-switch 使用基于二次幂选择 （power-of-two choices）[41] 的机制来选择一个核来引导请求。在到达同一目的地的出口队列中（如 3.1 节所述），它随机选择其中两个核，并将请求引导到负载较低的核心。二次幂选择是有效的，因为 
 
@@ -198,7 +198,7 @@ blk-switch 没有在远程存储服务器端实现请求引导；如果远程存
 
 根据上面的描述，应用程序引导技术是为了解决持续负载的。应用程序引导，即通过以将线程从持续过载的核引导到某个未充分利用的核的方式将 CPU 分配给各个应用程序线程。图 4 展示了一个例子（右）。blk-switch 在粗粒度的时间尺度上执行应用程序转向（在我们的实现中，默认值为 10 毫秒），因为它仅用于处理持续负载。与请求引导不同，blk-switch 在应用端和远程存储服务器上都实现了应用引导；对于后者，它引导在 blk-switch 的接收端出口队列中处理的线程。
 
-![image-20210719104111482](../images/2021-07-26-storage_stack/image-20210719104111482.png)
+![image-20210719104111482](/images/2021-07-26-storage_stack/image-20210719104111482.png)
 
 对于应用程序转向，blk-switch 使用类似于请求转向的框架，但做了修改（算法 2）。与请求转向框架不同，blk-switch 的应用程序引导中明确考虑了由 L-app 引起的核上的加权平均负载。原因：
 
@@ -210,7 +210,7 @@ blk-switch 没有在远程存储服务器端实现请求引导；如果远程存
 
 在Linux kernel 5.4.上进行修改，尽量重用当前内核存储栈的结构。最后修改的结果是：添加了928行代码——530 in blk-mq layer， 118 at device driver layer，280 for target-specific functions at remote storage layer.
 
-![image-20210719111420954](../images/2021-07-26-storage_stack/image-20210719111420954.png)
+![image-20210719111420954](/images/2021-07-26-storage_stack/image-20210719111420954.png)
 
  图5在blk-switch中T-app的请求数据通路 来自 T-app 的请求被转发到 T-app 出口队列，并从该 I/O 队列获取标签。Linux 维护了多种数据结构，以便将响应转发回正确的应用程序。blk-switch 使用了相同的基础架构。
 
@@ -226,7 +226,7 @@ Linux block layer overview.我们描述了 Linux 存储堆栈如何与异步 I/O
 
 在设备上进行 I/O 处理后，响应将返回到具有相同tag number的核。内核使用tag number从标签数组中找到相应的请求实例，释放tag number，bio instance 中的 kiocb被取出，以便找到kioctx。最后，完成事件被排入 kioctx 的环形缓冲区，并向应用程序发送通知。
 
-![image-20210719153825470](../images/2021-07-26-storage_stack/image-20210719153825470.png)
+![image-20210719153825470](/images/2021-07-26-storage_stack/image-20210719153825470.png)
 
  图6在blk-switch中请求的数据通路  (a) (w/ request steering): request is steered to the queue on core1 via  hctx(1,1) acquiring a tag from the steered queue. The response comes back to the  steered queue on core1. (b) (w/ application steering): When an application is  moved from core0 to core1, the in-flight request, sent before application  steering, comes back on core0. blk-switch finds the corresponding kioctx via the  tag and wakes up the application.
 
