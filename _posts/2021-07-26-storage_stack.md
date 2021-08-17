@@ -1,3 +1,14 @@
+---
+layout: post
+title: "Rearchitecting Linux Storage Stack: 重构Linux存储栈"
+author: Tianzhao Ci
+issue: 7
+tags:
+    - OSDI
+    - 2021
+    - Storage Stack
+---
+
 # 论文阅读笔记
 
 论文题目为：
