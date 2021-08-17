@@ -1,3 +1,13 @@
+- conference: OSDI 2022
+  description: Abstract Due.
+  deadline: 2021-12-07
+  url: https://www.usenix.org/conference/osdi22
+
+- conference: OSDI 2022
+  description: Paper Submission Deadline.
+  deadline: 2021-12-14
+  url: https://www.usenix.org/conference/osdi22
+
 - conference: HPCA 2022
   description: Paper Submission Deadline.
   deadline: 2021-07-30
