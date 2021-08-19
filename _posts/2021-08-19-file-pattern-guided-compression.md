@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "File Pattern-guided Compression: 使用模式感知的文件压缩"
+title: "File Pattern-guided Compression: 负载感知的文件压缩"
 author: Jian Zhou
 issue: 9
 tags:
