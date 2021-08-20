@@ -24,7 +24,7 @@ tags:
 
 
 <center>
-<img src="./images/acclaim-refault.png" width="75%" height="65%" />
+<img src="../images/acclaim-refault.png" width="75%" height="65%" />
 
 图  page refault占比
 </center>
@@ -32,7 +32,7 @@ tags:
 Direct reclaim占所有内存回收的0.8%，每当发生Direct reclaim时，多达1024个脏页需要被写回闪存，严重增加page fault处理时延。
 
 <center>
-<img src="./images/acclaim-directrecalim.png" width="75%" height="65%" />
+<img src="../images/acclaim-directrecalim.png" width="75%" height="65%" />
 
 图  Direct reclaim占比
 </center>
@@ -41,7 +41,7 @@ Direct reclaim占所有内存回收的0.8%，每当发生Direct reclaim时，多
 1. 后台应用会持续消耗空闲内存，并且产生不可移动的匿名页（位于active anon page list），导致前台应用的文件页被逐出，而这些文件页在之后又会被访问
 
 <center>
-<img src="./images/acclaim-stillactive.png" width="75%" height="65%" />
+<img src="../images/acclaim-stillactive.png" width="75%" height="65%" />
 
 图  后台应用持续运行并占用内存
 </center>
@@ -49,7 +49,7 @@ Direct reclaim占所有内存回收的0.8%，每当发生Direct reclaim时，多
 2. 99%的分配大小是1个page；而80%的回收大小大于32个pages
 
 <center>
-<img src="./images/acclaim-granularity.png" width="75%" height="65%" />
+<img src="../images/acclaim-granularity.png" width="75%" height="65%" />
 
 图  回收粒度远大于分配粒度
 </center>
@@ -61,14 +61,14 @@ Direct reclaim与refault是一个矛盾体；若回收的粒度过大，会使�
 
 ## 设计：
 <center>
-<img src="./images/acclaim-LWP.png" width="75%" height="65%" />
+<img src="../images/acclaim-LWP.png" width="75%" height="65%" />
 
 图  LWP
 </center>
 
 
 <center>
-<img src="./images/acclaim-PAE.png" width="75%" height="65%" />
+<img src="../images/acclaim-PAE.png" width="75%" height="65%" />
 
 图  PAE
 </center>
