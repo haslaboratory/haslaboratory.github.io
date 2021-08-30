@@ -13,7 +13,7 @@ tags:
 
 主要讲的是SSD引入Nvme导致的公平性问题
 
-![image](images/2021-08-30-FLIN%20NVMe-SSD公平调度/image-20210830115844512.png)
+![image](/images/2021-08-30-FLIN%20NVMe-SSD公平调度/image-20210830115844512.png)
 
 分为前端和后端:前端包括和Host交互的模块和控制模块 后端是数据存储单元
 前端HIL的协议与Host进行交互,以轮询的方式从HOST侧获取IO请求
