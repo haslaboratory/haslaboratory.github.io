@@ -13,7 +13,7 @@ tags:
 
 主要讲的是SSD引入Nvme导致的公平性问题
 
-![image](/images/2021-08-30-FLIN NVMe-SSD公平调度/image-20210830115844512.png)
+![image](/images/2021-08-30-FLIN%20NVMe-SSD%E5%85%AC%E5%B9%B3%E8%B0%83%E5%BA%A6image-20210830115844512.png)
 
 分为前端和后端:前端包括和Host交互的模块和控制模块 后端是数据存储单元
 前端HIL的协议与Host进行交互,以轮询的方式从HOST侧获取IO请求
@@ -32,14 +32,14 @@ MQ=muti-queue 指的是chip level的队列
 1.I/O命令的数据长度导致的干扰  小数据I/O在chip level队列长度变长时受到的影响更大
 2.有些flow利用了多chip进行了并发,这些flow在与没有利用chip level并发的flow一起执行时受到的干扰更大
 3.读优先调度导致的不公平 写在flow中的占比越高,这个flow的公平性越低 
-![image](/images/2021-08-30-FLIN NVMe-SSD公平调度/image-20210830115918167.png)
+![image](/images/2021-08-30-FLIN%20NVMe-SSD%E5%85%AC%E5%B9%B3%E8%B0%83%E5%BA%A6image-20210830115918167.png)
 
 4. GC的数量会随着写入量增大而增大,GC-高的Flow会对GC低的flow造成干扰
 
 ## 解决方案
-![image](/images/2021-08-30-FLIN NVMe-SSD公平调度/image-20210830115932682.png)
+![image](/images/2021-08-30-FLIN%20NVMe-SSD%E5%85%AC%E5%B9%B3%E8%B0%83%E5%BA%A6image-20210830115932682.png)
 1. 解决Low-high I/O intensity以及 并行访问模式干扰问题
-![image](/images/2021-08-30-FLIN NVMe-SSD公平调度/image-20210830115954102.png)
+![image](/images/2021-08-30-FLIN%20NVMe-SSD%E5%85%AC%E5%B9%B3%E8%B0%83%E5%BA%A6image-20210830115954102.png)
 2.从当前优先级P中选取一个准备好的写请求,一个准备好的读请求
 
 3.在read write GC-RDQ GC-WRQ中选取一个进行调度
