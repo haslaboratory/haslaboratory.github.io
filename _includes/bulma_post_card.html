@@ -7,13 +7,16 @@
     </a>
     {% endif %}
     <div class="card-content">
-        <div class="content">
-            <a class="title is-6" href="{{ include.post.url }}">
+        <a class="content" href="{{ include.post.url }}">
+            <p class="title is-6">
                 {{ include.post.title }}
-            </a>
-            <p>
-                <time class="is-size-7">{{ include.post.date | date: '%Y %b %d' }}</time>
             </p>
-        </div>
+            <p>
+                <span class="tag is-small is-link is-light">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+                {% for tag in post.tags limit:3 %}
+                <span class="tag is-small is-link is-light">{{ tag }}</span>
+                {% endfor %}
+            </p>
+        </a>
     </div>
 </div>
