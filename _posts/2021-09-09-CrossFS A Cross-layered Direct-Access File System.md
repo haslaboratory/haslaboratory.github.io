@@ -101,7 +101,7 @@ ZoFS：面向的是非易失性内存，使用了虚拟内存来保护数据和�
 
 吞吐量测试：
 
-![image](/images/2021-09-04-Asynchronous%20IO%20Stack%20A%20Low-latency%20Kernel%20IO%20Stack%20for%20Ultra-Low%20Latency%20SSDs/image-20210906205233505.png)
+![image](/images/2021-09-09-CrossFS%20A%20Cross-layered%20Direct-Access%20File%20System/image-20210906205233505.png)
 
 对于一个12GB的文件进行了并行读写访问，测试吞吐量
 
@@ -125,7 +125,7 @@ ZoFS：面向的是非易失性内存，使用了虚拟内存来保护数据和�
 
 ### CrossFS的层级
 
-![image](/images/2021-09-04-Asynchronous%20IO%20Stack%20A%20Low-latency%20Kernel%20IO%20Stack%20for%20Ultra-Low%20Latency%20SSDs/image-20210907164255316.png)
+![image](/images/2021-09-09-CrossFS%20A%20Cross-layered%20Direct-Access%20File%20System/image-20210907164255316.png)
 
 LibFS：应用通过LibFS使用文件系统的接口，LibFS会将这些操作转化成FirmFS I/O的命令。
 
@@ -161,7 +161,7 @@ OS layer：主要用于通过分配DMA内存区域来设置fd -queue、挂载Cro
   
   ```
 
-![image](/images/2021-09-04-Asynchronous%20IO%20Stack%20A%20Low-latency%20Kernel%20IO%20Stack%20for%20Ultra-Low%20Latency%20SSDs/image-20210910144046200.png)
+![image](/images/2021-09-09-CrossFS%20A%20Cross-layered%20Direct-Access%20File%20System/image-20210910144046200.png)
 
 - 对于并发写，就像图2中展示的一样，op2和op6存在冲突，那么就放到同一个FD-queue中
 
