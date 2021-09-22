@@ -3,6 +3,8 @@ description: The computer world is a world of dialect.
 permalink: date
 exclude: [project, src, build.sbt, CNAME, LICENSE, README.md, bin]
 
+baidu_tongji: 5dd90fa2a437c8398a6a160a4fbd5607
+
 collections:
   docs:
     title: 文档
