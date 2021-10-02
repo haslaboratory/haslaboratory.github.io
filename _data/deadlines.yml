@@ -1,11 +1,21 @@
+- conference: ACM SIGMETRICS 2022
+  description: Paper Submission Deadline.
+  deadline: 2022-02-02
+  url: https://www.sigmetrics.org/sigmetrics2022/call_for_papers.html
+
+- conference: ACM SIGMETRICS 2022
+  description: Abstract Due.
+  deadline: 2022-01-26
+  url: https://www.sigmetrics.org/sigmetrics2022/call_for_papers.html
+
 - conference: USENIX ATC 2022
   description: Paper Submission Deadline.
-  deadline: 2022-1-12
+  deadline: 2022-01-12
   url: https://www.usenix.org/conference/atc22
   
 - conference: USENIX ATC 2022
   description: Abstract Due.
-  deadline: 2022-1-06
+  deadline: 2022-01-06
   url: https://www.usenix.org/conference/atc22
 
 - conference: OSDI 2022
