@@ -11,3 +11,4 @@ order: 3
 | Micro 2018 | [Osiris: A Low-Cost Mechanism to Enable Restoration of Secure Non-Volatile Memories](https://cfwebprod.sandia.gov/cfdocs/CompResearch/docs/main7.pdf) | 校验与纠错 |
 | ISCA 2020 | [Tailored Page Sizes](https://ieeexplore.ieee.org/document/9138990) | 浮点数、虚拟内存 |
 | Micro 2019 | [ComputeDRAM: In-Memory Compute Using Off-the-Shelf DRAMs](https://parallel.princeton.edu/papers/micro19-gao.pdf) | 动态内存 |
+| Micro 2013 | [RowClone: Fast and Energy-Efficient In-DRAM Bulk Data Copy and Initialization](https://users.ece.cmu.edu/~omutlu/pub/rowclone_micro13.pdf) | 动态内存 |
