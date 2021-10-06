@@ -2,3 +2,6 @@
 
 git pull git@github.com:has-lab/has-lab.github.io.git master
 git push git@github.com:has-lab/has-lab.github.io.git master
+
+bundle exec jekyll build --incremental
+rsync -avzPh --delete _site/* haslab:/var/www/haslab.org
