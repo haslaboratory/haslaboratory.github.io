@@ -32,6 +32,15 @@ order: 3
 
 {% include video.html id="https://www.bilibili.com/video/av795835629" %}
 
+##### 配色方案
+
+配色保证两点：
+
+1. 彩色明亮，保证彩色打印美观。
+2. 灰度有足够区分度，保证黑白打印清晰可读。
+
+具体配色方案可参考专业配色网站：[https://grayscale.design/app](https://grayscale.design/app)
+
 ### 相关文章
 
 - [Systems Benchmarking Crimes](https://www.cse.unsw.edu.au/~gernot/benchmarking-crimes.html)
