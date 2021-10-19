@@ -24,4 +24,4 @@ order: 5
 
 曾经的我也只见手指，不见月亮。直至现在指导学生科研，才确定“望月”并非易事，需要长期训练和领悟才能达到。训练的第一步就是要思考月华究竟是手指所在、手指前方、上方、下方，还是说手指根本就方向反了。科研具有非常强的探索性和自悟性。老师根据自己经验提供的指导，往往还有很大的未知性，也许还有很多坑在前方。与老师的交流过程不能停留在“手指”处，比如改一张图、改一句话、读一篇论文、做一个实验，而是要进一步思考有哪些新的发现、新的问题、新的设计、新的取舍、新的平衡？唯有这样，才有和老师一起发现新的“月华”的可能性。
 
-关于如何在攻读学位过程取得成功、如何与老师有效沟通，推荐阅读Hanna M. Wallach教授的[How to Be a Successful PhD Student](https://people.cs.umass.edu/~wallach/how_to_be_a_successful_phd_student.pdf)。
+关于如何在攻读学位过程取得成功、如何与老师有效沟通，推荐阅读Hanna M. Wallach教授的《[How to Be a Successful PhD Student](https://people.cs.umass.edu/~wallach/how_to_be_a_successful_phd_student.pdf)》。
