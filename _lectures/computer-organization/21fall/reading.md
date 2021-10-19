@@ -22,3 +22,7 @@ order: 3
 | ISCA 2014 | [Flipping Bits in Memory Without Accessing Them: An Experi- mental Study of DRAM Disturbance Errors (Rowhammer)](https://users.ece.cmu.edu/~yoonguk/papers/kim-isca14.pdf) | 利用动态内存刷新间隔翻转数据 |
 | USENIX Security 2014 | [FLUSH+RELOAD: a High Resolution, Low Noise, L3 Cache Side-Channel Attack](https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-yarom.pdf) | 利用缓存窃密 |
 | USENIX Security 2018 | [Meltdown: Reading Kernel Memory from User Space](https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-lipp.pdf) | 利用指令乱序执行获得内核权限 |
+| | <center>虚拟内存</center> | |
+| ATC 2017 | [Optimizing the TLB Shootdown Algorithm with Page Access Tracking](https://www.usenix.org/conference/atc17/technical-sessions/presentation/amit) | 通过跟踪页表访问优化TLB |
+| Asplos 2020 | [Batch-Aware Unified Memory Management in GPUs for Irregular Workloads](https://ramyadhadidi.github.io/files/kim-asplos20.pdf) | 面向GPU的批处理式统一内存管理 |
+| ISCA 2020 | [Enhancing and Exploiting Contiguity for Fast Memory Virtualization](https://research.vmware.com/publications/enhancing-and-exploiting-contiguity-for-fast-memory-virtualization) | 降低虚拟化场景下的内存地址转换开销 |
