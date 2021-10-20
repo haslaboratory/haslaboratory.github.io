@@ -27,3 +27,4 @@ order: 3
 | Asplos 2020 | [Batch-Aware Unified Memory Management in GPUs for Irregular Workloads](https://ramyadhadidi.github.io/files/kim-asplos20.pdf) | 面向GPU的批处理式统一内存管理 |
 | ISCA 2020 | [Enhancing and Exploiting Contiguity for Fast Memory Virtualization](https://research.vmware.com/publications/enhancing-and-exploiting-contiguity-for-fast-memory-virtualization) | 降低虚拟化场景下的内存地址转换开销 |
 | Asplos 2020 | [Elastic Cuckoo Page Tables: Rethinking Virtual Memory Translation for Parallelism](http://www.cs.cmu.edu/~dskarlat/publications/cuckoo_asplos20.pdf) | 基于哈希的虚拟内存映射表 |
+| Micro 2019 | [Practical Byte-Granular Memory Blacklisting using Califorms](http://www.cs.columbia.edu/~simha/preprint_micro19_califorms.pdf) | 通过缓存行变形控制字节访问权限 |
