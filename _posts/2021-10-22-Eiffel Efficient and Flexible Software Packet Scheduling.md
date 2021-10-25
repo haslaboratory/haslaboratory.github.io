@@ -39,7 +39,11 @@ data in Bitmap Meta data:
 0 represents none in this priority queue and the opposite is 1.
 
 use FFS(find first set) instruction to find max or min priority queue  
+<<<<<<< HEAD
 The FFS  background https://en.wikipedia.org/wiki/Find_first_set
+=======
+(The FFS  background https://en.wikipedia.org/wiki/Find_first_set)
+>>>>>>> github/master
 
 **Hierarchical FFS-based queue**
 
