@@ -58,7 +58,5 @@ One word bitmap may still not undertake the mount of priority queues and Circula
 
 
 ## Thought
-
 This paper is a NSDI 19 paper, the reason why I read this paper is to find some scheduling design for the scheduling of LINUX IO stack.
-
-However, what I learn from this paper is not  a  concrete algorithm for mutil-queue scheduling  but a software scheduling model suited for any mutil-queue scheduling policy. In my opinion, FFS-based priority will be Beneficial to our design with no doubt but cannot solve our key problem. And Eiffel's source code cannot be found, it may not worthy to do it. We can use some open-source programmable scheduling model like PIFO as our basic data structure instead which may help per-flow scheduling or just introduce FFS-based priority queues.
+However, what I learn from this paper is not  a  concrete algorithm for mutil-queue scheduling  but a software scheduling model suited for any mutil-queue scheduling policy. 
