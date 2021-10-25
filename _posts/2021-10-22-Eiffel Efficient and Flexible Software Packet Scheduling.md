@@ -23,7 +23,7 @@ Problem:
 
 key insights:
 
-1. Now scheduling policy that has m ranking functions associated with a packet typically requires m priority queues in which this packet needs to be enqueued and dequeued [49], which translates roughly to O(m logn) operations per packet for a scheduler with n packets enqueued.  
+1. Now scheduling policy that has m ranking functions associated with a packet typically requires m priority queues in which this packet needs to be enqueued and dequeued, which translates roughly to O(m logn) operations per packet for a scheduler with n packets enqueued.  
    The priority can be represented as integers and integer priority queues can have O(1) for packet insertion and extraction thus will make origin O(m logn) lower to the O(m) based on FFS(find first set CPU instruction)	(if we can introduce this promotion，it may get some benefit and how can we separate our work from theirs?)
 2. packet scheduling programming models do not both support per-flow packet scheduling and reordering of packets on a dequeue operation   (I think the first one may be more related to our topics)
 
@@ -39,7 +39,7 @@ data in Bitmap Meta data:
 0 represents none in this priority queue and the opposite is 1.
 
 use FFS(find first set) instruction to find max or min priority queue  
-The FFS  background https://en.wikipedia.org/wiki/Find_first_set
+(The FFS  background https://en.wikipedia.org/wiki/Find_first_set)
 
 **Hierarchical FFS-based queue**
 
