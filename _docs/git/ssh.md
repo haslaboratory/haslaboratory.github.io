@@ -72,3 +72,11 @@ cat ~/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 ssh -CqTnN -D localhost:8080 nickname
 ```
+
+## 创建命令别名
+
+在文件``~/.profile``或者``~/.bashrc``中添加
+
+```
+alias socks="ssh -CqTnN -D localhost:8080 nickname"
+```
