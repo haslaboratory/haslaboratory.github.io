@@ -50,3 +50,7 @@ for the extra fractional request of each group, they can be handled by "spillwal
 ## evaluation
 ![image](../images/2021-11-11-When%20Idling%20is%20Ideal%20Optimizing%20Tail-Latency/1636699600499fynglOYZUr.png)
 compared to the d-FCFS and c-FCFS, the overall latency and short request latency in DARC decrease a lot
+
+
+## Concept of Work-conserving scheduler
+In computing and communication systems, a work-conserving scheduler is a scheduler that always tries to keep the scheduled resource(s) busy, if there are submitted jobs ready to be scheduled. In contrast, a non-work conserving scheduler is a scheduler that, in some cases, may leave the scheduled resource(s) idle despite the presence of jobs ready to be scheduled.
