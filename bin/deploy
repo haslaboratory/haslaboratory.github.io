@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git pull git@github.com:has-lab/has-lab.github.io.git master --rebase
-git pull ssh://git@git.haslab.org:22/haslab/haslab.org.git master --rebase
+git pull git@github.com:has-lab/has-lab.github.io.git master
+git pull ssh://git@git.haslab.org:22/haslab/haslab.org.git master
 git push git@github.com:has-lab/has-lab.github.io.git master
 git push ssh://git@git.haslab.org:22/haslab/haslab.org.git master
 
