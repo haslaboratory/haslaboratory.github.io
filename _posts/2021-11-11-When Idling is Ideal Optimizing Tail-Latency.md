@@ -40,7 +40,7 @@ compute the core for each group and ensure  as-sign at least one worker to a gro
 for the extra fractional request of each group, they can be handled by "spillwall" core or  steal from the long request core
 
 ## Perséphone architecture
-![image](../images/2021-11-11-When%20Idling%20is%20Ideal%20Optimizing%20Tail-Latency/1636699013281fKkCFQV9Iu.png)
+![image](/images/2021-11-11-When%20Idling%20is%20Ideal%20Optimizing%20Tail-Latency/1636699013281fKkCFQV9Iu.png)
 1.worker takes packet from the network  
 2.add user-defined  classifier wo request  
 3.store request into type queues  
@@ -48,7 +48,7 @@ for the extra fractional request of each group, they can be handled by "spillwal
 5.worker process the request and 6. response to the NIC and 7. dispatcher   
 
 ## evaluation
-![image](../images/2021-11-11-When%20Idling%20is%20Ideal%20Optimizing%20Tail-Latency/1636699600499fynglOYZUr.png)
+![image](/images/2021-11-11-When%20Idling%20is%20Ideal%20Optimizing%20Tail-Latency/1636699600499fynglOYZUr.png)
 compared to the d-FCFS and c-FCFS, the overall latency and short request latency in DARC decrease a lot
 
 
