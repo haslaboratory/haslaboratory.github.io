@@ -23,7 +23,7 @@ layout: bulma
             </div>
             <div class="column">
                 <aside class="menu">
-                    <p class="menu-label">最新文章</p>
+                    <a class="menu-label" href="/blog/">最新文章</a>
                     <ul class="menu-list">
                         {% for post in site.posts limit:10 %}
                         <li>

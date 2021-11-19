@@ -81,7 +81,7 @@ In-Cache Line Logging基于这样的事实：在如今的的商用NVM中，日�
 
    实验结果：
 
-   ​	![吞吐量比较](../images/2021-11-07-In-Line-Cache/吞吐量.png)
+   {% include image.html src="throughput.png" width="360px" %}
 
 2. **恢复时间**
 
