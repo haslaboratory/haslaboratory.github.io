@@ -12,10 +12,23 @@ if [ "$(which bundle)" = "" ]; then
     fi
 fi
 
-git pull git@github.com:has-lab/has-lab.github.io.git master
-git pull ssh://git@git.haslab.org:22/haslab/haslab.org.git master
-git push git@github.com:has-lab/has-lab.github.io.git master
-git push ssh://git@git.haslab.org:22/haslab/haslab.org.git master
+sync() {
+    name=$1
+    url=$2
+
+    if ! git remote get-url $name &> /dev/null; then
+        git remote add $name $url
+    fi
+    if [ $(git remote get-url $name) != $url ]; then
+        git remote set-url $name $url
+    fi
+
+    git pull $name master
+    git push $name HEAD:master
+}
+
+sync github git@github.com:has-lab/has-lab.github.io.git
+sync haslab ssh://git@git.haslab.org:22/haslab/haslab.org.git
 
 bundle exec jekyll build --incremental
 rsync -avzPh --delete _site/* haslab:/var/www/haslab.org
