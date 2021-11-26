@@ -1,5 +1,17 @@
 #!/bin/bash
 
+. ~/.profile
+
+if [ "$(which bundle)" = "" ]; then
+    bin/install
+
+    RUBY_VERSION=$(ruby -e 'print "#{ RUBY_VERSION }"')
+
+    if [ -d "$HOME/.gem/ruby/${RUBY_VERSION}/bin" ] ; then
+        PATH="$HOME/.gem/ruby/${RUBY_VERSION}/bin:$PATH"
+    fi
+fi
+
 git pull git@github.com:has-lab/has-lab.github.io.git master
 git pull ssh://git@git.haslab.org:22/haslab/haslab.org.git master
 git push git@github.com:has-lab/has-lab.github.io.git master
