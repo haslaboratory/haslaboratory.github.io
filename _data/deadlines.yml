@@ -1,3 +1,13 @@
+- conference: HPDC 2022
+  description: Paper Due.
+  deadline: 2022-01-27
+  url: http://www.hpdc.org/2022/
+
+- conference: HPDC 2022
+  description: Abstract Due.
+  deadline: 2022-01-20
+  url: http://www.hpdc.org/2022/
+
 - conference: DAC 2022
   description: Abstract Due.
   deadline: 2021-11-15
