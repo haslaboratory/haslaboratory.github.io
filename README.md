@@ -1,5 +1,5 @@
 # High-performance Architecture and System Laboratory
 
-# run and check website
+# Run and check website
 
-before pull request, observe the website via running `./run_server`.
+Before submitting a pull request, test the website via running `./serve`.
