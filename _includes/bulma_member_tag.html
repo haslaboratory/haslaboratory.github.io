@@ -1,0 +1,23 @@
+{% assign nicks = include.nick | split: ", " %}
+
+{% for nick in nicks %}
+
+{% assign user = site.data.members | where:"nick", nick | first %}
+
+{% if user != nil %}
+<div class="control">
+  <a href="/members/#{{ user.nick | slugify }}" class="tags has-addons">
+    <span class="tag icon is-dark"><i class="far fa-user"></i></span>
+    <span class="tag is-info">{{ user.name }} ({{ user.nick }})</span>
+  </a>
+</div>
+{% else %}
+<div class="control">
+  <a class="tags has-addons">
+    <span class="tag icon is-dark"><i class="far fa-user"></i></span>
+    <span class="tag is-info">{{ nick }}</span>
+  </a>
+</div>
+{% endif %}
+
+{% endfor %}

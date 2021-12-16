@@ -6,9 +6,7 @@
         </a>
     </div>
 
-    <div class="control">
-        {% include bulma_member.html nick=page.author %}
-    </div>
+    {% include bulma_member_tag.html nick=page.author %}
 
     {% for tag in page.tags %}
     <div class="control">
