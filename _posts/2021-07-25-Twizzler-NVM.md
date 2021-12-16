@@ -2,6 +2,7 @@
 layout: post
 title: "Twizzler：用于非易失性内存的以数据为中心的操作系统"
 author: Jintian Wu
+issue: 68
 tags:
     - ATC
     - 2020
