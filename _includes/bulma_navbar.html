@@ -54,7 +54,7 @@
                     </a>
                 
                     <div class="navbar-dropdown">
-                        {% assign lectures = site.lectures | where_exp: "item", "item.doc > 0" | sort: "doc", "last" %}
+                        {% assign lectures = site.lectures | where_exp: "item", "item.doc > 0" | sort: "doc" | reverse %}
                         {% for lecture in lectures %}
                         <a class="navbar-item" href="{{ lecture.url }}">
                             {{ lecture.title }}
