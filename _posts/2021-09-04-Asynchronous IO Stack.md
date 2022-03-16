@@ -8,7 +8,9 @@ tags:
  - IO Stack
  - Block layer
 ---
-# [Asynchronous I/O Stack: A Low-latency Kernel I/O Stack for Ultra-Low Latency SSDs]()
+# [Asynchronous I/O Stack: A Low-latency Kernel I/O Stack for Ultra-Low Latency SSDs](https://www.usenix.org/system/files/atc19-lee-gyusun.pdf)
+
+作者对于IO stack的背景知识讲述，以及motivation的叙述非常的好，推荐阅读原文
 
 ## introduction
 
@@ -54,7 +56,7 @@ tags:
 
 设备驱动层：NVMe协议完成请求
 
-### 异步执行的动机
+### read异步执行的动机
 
 有些操作可以和设备IO的时间重叠
 ![image](/images/2021-09-04-Asynchronous%20IO%20Stack%20A%20Low-latency%20Kernel%20IO%20Stack%20for%20Ultra-Low%20Latency%20SSDs/image-20210901211221999.png)
@@ -68,7 +70,7 @@ tags:
 
 fsync操作的话可以分为3个I/O(ext4文件系统)，data block write 日志块写 提交块写
 
-### 异步执行的动机
+### fsync异步执行的动机
 ![image](/images/2021-09-04-Asynchronous%20IO%20Stack%20A%20Low-latency%20Kernel%20IO%20Stack%20for%20Ultra-Low%20Latency%20SSDs/image-20210901212054241.png)
 
 
