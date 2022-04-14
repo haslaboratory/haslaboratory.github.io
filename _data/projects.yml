@@ -1,0 +1,39 @@
+- start: 2022
+  end: 2024
+  type: 基金
+  grant: CCF-华为胡杨林基金
+  role: 主持
+  title: 基于盘内索引的面向特定领域文件系统
+  amount: 20
+
+- start: 2022
+  end: 2024
+  type: 基金
+  grant: 国基金青年项目
+  role: 主持
+  title: 面向存储级内存写时复制技术的跨层协同优化方法研究
+  amount: 30
+
+- start: 2021
+  end: 2023
+  type: 项目
+  grant: 华为合作项目
+  role: 参与
+  title: Plog分布式存储系统关键技术研究
+  amount: 120
+
+- start: 2021
+  end: 2022
+  type: 项目
+  grant: 华为合作项目
+  role: 主持
+  title: 终端存储数据预测项目
+  amount: 66
+
+- start: 2021
+  end: 2023
+  type: 基金
+  grant: 华中科技大学自主创新基金
+  role: 主持
+  title: 面向混合内存数据存储的跨层协同优化方法研究
+  amount: 30
