@@ -17,5 +17,5 @@ permalink: /
 
 ###### [团队新闻](/news.html)
 
-{% assign news = site.data.news | slice: 0, 5 %}
+{% assign news = site.data.news | slice: 0, 3 %}
 {% include bulma_news.html news = news %}
