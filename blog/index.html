@@ -9,6 +9,23 @@ layout: bulma
     <div class="container">
         <div class="content">
             <h1 class="title">{{page.title}}</h1>
+
+            <div class="tabs is-centered">
+                <ul>
+                    <li class="is-active"><a href="/blog/">
+                        <span class="icon has-text-link">
+                            <i class="fa-solid fa-bars"></i>
+                        </span>
+                        <span>归档</span>
+                    </a></li>
+                    <li><a href="/tags/">
+                        <span class="icon has-text-info">
+                            <i class="fas fa-hashtag"></i>
+                        </span>
+                        <span>标签</span>
+                    </a></li>
+                </ul>
+            </div>
         </div>
         {% include bulma_pagination.html paginator=paginator %}
         <div class="content">

@@ -23,7 +23,7 @@ jekyll-archives:
     tag: /tag/:name/
     category: /category/:name/
 
-paginate: 12
+paginate: 24
 paginate_path: /blog/:num/
 
 plugins:

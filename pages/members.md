@@ -4,6 +4,23 @@ layout: page
 permalink: /members/
 ---
 
+<div class="tabs is-centered">
+    <ul>
+        <li class="is-active"><a href="/members/">
+            <span class="icon has-text-warning">
+                <i class="fas fa-user"></i>
+            </span>
+            <span>成员</span>
+        </a></li>
+        <li><a href="/join/">
+            <span class="icon has-text-danger">
+                <i class="fas fa-user-plus"></i>
+            </span>
+            <span>加入</span>
+        </a></li>
+    </ul>
+</div>
+
 {% assign advisors = site.data.members | where:'degree', "Advisor" | sort:'join' %}
 {% assign doctors = site.data.members | where:'degree', "Doctor" | sort:'join' %}
 {% assign masters = site.data.members | where:'degree', "Master" | sort:'join' %}
