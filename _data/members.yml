@@ -4,7 +4,6 @@
   github: janzhou
   degree: Advisor
   join: 2020
-  description: Jian Zhou joined Huazhong University of Science and Technology as an Associate Professor in Wuhan National Laboratory for Optoelectronics in 2021. He received his first Ph.D. in Computer Science from Huazhong University of Science and Technology in 2016 and his second Ph.D. in Computer Engineering from the University of Central Florida in 2018. He worked as Postdoctoral Fellow at the University of Central Florida from 2018 to 2020. His research interests include Advanced Computer Architecture, Non-volatile Memory (NVM) technologies, Hardware Security, Solid-state Storage Drive (SSD) technologies, Big Data, Near Data Processing, etc. He has published more than 20 papers in top conferences and journals in computer architecture such as ISCA, DAC, IEEE TC, IEEE TPDS, ACM ToS, EuroSYS, IPDPS, DATE, ICCD, JPDC, CLUSTER, etc. He received three invention patents in China. His research has been mainly funded by the National Natural Science Foundation of America (NSF) and the National Natural Science Foundation of China (NSFC). He has actively served as a reviewer for top computer journals such as IEEE TC, IEEE TPDS, and IEEE TCC, and conferences include IEEE NAS. He also served as Session Chair, Publication Chair, Registration Chair, Website Chair in 2017/2018 IEEE CyberSciTech, IEEE DASC, IEEE PICOM, IEEE DATACOM. <hr/> 周健，华中科技大学武汉光电国家研究中心副教授。2016年获得华中科技大学计算机科学博士学位，2018年获得美国中佛罗里达大学计算机工程博士学位。2018-2020年，进入美国中佛罗里达大学做博士后。2021年，获聘为华中科技大学武汉光电国家研究中心副教授。主要从事计算机系统结构、存储级内存、可信计算、固态存储技术、大规模存储系统、大数据分析系统、近数据处理等方面的研究工作。在ISCA、DAC、IEEE TC、IEEE TPDS、ACM ToS、EuroSYS、IPDPS、DATE、ICCD、JPDC、CLUSTER等国际一流学术会议及期刊发表论文20余篇。获得发明专利3项。参与美国国家自然科学基金项目5项。参与973、863、国基金重点项目和国基金项目多项。担任IEEE TC、IEEE TPDS和IEEE TCC等计算机顶级期刊的审稿人。在IEEE CyberSciTech、IEEE DASC、IEEE PICOM、IEEE DATACOM等会议中担任过分会主席、Publication Chair、Registration Chair、Website Chair和审稿人。
 
 - nick: Premierpro
   name: 魏华辰
@@ -25,14 +24,16 @@
   github: virgilshi
   degree: Master
   join: 2018
-  description:
+  leave: 2021
+  description: 加入阿里云盘古团队。
 
 - nick: Qiulin Wu
   name: 吴秋霖
   github: wuqiulin1995
   degree: Doctor
   join: 2017
-  description:
+  leave: 2022
+  description: 加入华为上海研究所。
 
 - nick: Weizhou Huang
   name: 黄维周
@@ -44,48 +45,78 @@
 - nick: LonelyStrange
   name: 李蓉
   github: lrg11
-  degree: undergraduate
+  degree: Undergraduate
   join: 2017
+  leave: 2021
   description: I fall in love with learning of chip design and digital technology
 
 - nick: Ziqi Zhou
   name: 周子淇
   github: Small7-1999
-  degree: undergraduate
-  join: 2017
+  degree: Master
+  join: 2021
   description:
 
 - nick: Zhang Zhengdi
   name: 张正狄
   github: zzdkirov
-  degree: undergraduate
-  join: 2017
+  degree: Master
+  join: 2021
   description:
 
 - nick: Qilin Tian
   name: 田麒麟
   github: TianQiLin666666
-  degree: undergraduate
-  join: 2017
+  degree: Master
+  join: 2021
   description:
   
 - nick: Aoxin Wei
   name: 魏澳鑫
   github: justapawn
-  degree: undergraduate
-  join: 2017
+  degree: Doctor
+  join: 2021
   description:
   
 - nick: Zixiao Chen
   name: 陈子啸
   github: Chen-zixiao
-  degree: undergraduate
+  degree: Undergraduate
   join: 2021
+  leave: 2021
   description:
 
 - nick: Zichen Xu
   name: 徐梓晨
   github: xzcxzcyy
-  degree: undergraduate
+  degree: Undergraduate
   join: 2021
+  description:
+
+- nick: Jintian Wu
+  name: 吴锦添
+  github: Wjt1127
+  degree: Master
+  join: 2022
+  description:
+  
+- nick: Xuda Zheng
+  name: 郑旭达
+  github: zxdhw
+  degree: Doctor
+  join: 2022
+  description:
+
+- nick: Meng Wang
+  name: 王萌
+  github: welmon
+  degree: Master
+  join: 2022
+  description:
+
+- nick: Yufan Jia
+  name: 贾雨凡
+  github: YufanJia
+  degree: Master
+  join: 2022
   description:

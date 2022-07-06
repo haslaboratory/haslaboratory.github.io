@@ -2,11 +2,15 @@
 
 ## {{ include.name }}
 
+{% assign current_year = "now" | date: "%Y" %}
+
 <div class="columns is-multiline">
 {% for member in include.members %}
+{% if member.leave == nil %}
     <div class="column is-full-mobile is-full-tablet is-half-desktop">
         {% include bulma_member_card.html member=member %}
     </div>
+{% endif %}
 {% endfor %}
 </div>
 {% endif %}

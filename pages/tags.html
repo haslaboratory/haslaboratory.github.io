@@ -1,8 +1,27 @@
 ---
-title: Tags
+title: 论文早读
 layout: page
 permalink: /tags/
 ---
+
+<div class="content">
+    <div class="tabs is-centered">
+        <ul>
+            <li><a href="/blog/">
+                <span class="icon has-text-link">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+                <span>归档</span>
+            </a></li>
+            <li class="is-active"><a href="/tags/">
+                <span class="icon has-text-info">
+                    <i class="fas fa-hashtag"></i>
+                </span>
+                <span>标签</span>
+            </a></li>
+        </ul>
+    </div>
+</div>
 
 {% capture tags %}
 {% for tag in site.tags %}

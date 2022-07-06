@@ -1,5 +1,13 @@
 - start: 2022
-  end: 2024
+  end: 2023
+  type: 基金
+  grant: 阿里巴巴创新研究计划
+  role: 主持
+  title: 面向存储级内存细粒度写时复制技术优化方法研究
+  amount: 50
+
+- start: 2022
+  end: 2023
   type: 基金
   grant: CCF-华为胡杨林基金
   role: 主持
@@ -15,7 +23,7 @@
   amount: 30
 
 - start: 2021
-  end: 2023
+  end: 2022
   type: 项目
   grant: 华为合作项目
   role: 参与
