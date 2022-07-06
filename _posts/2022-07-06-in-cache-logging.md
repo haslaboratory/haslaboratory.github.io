@@ -42,7 +42,11 @@ https://zhuanlan.zhihu.com/p/271740123
 本文的主要工作分为三个部分，分别是支持细粒度的检查点、外部日志以及cache line内日志
 ### fine-grained-checkpoint
 本文将检查点的备份周期设置为64ms（可以调整），在每个周期开始之前对cache整个cache进行下刷，因为最多下刷cache大小的数据，以及大量的修改都在之前的周期中被完成了。
-
 ### external-logging
+external-logging并不常用，用于记录复杂修改的节点，即InCLL不能处理的情况（同一个缓存行中有两个value被修改）。这里采用了node粒度的锁去避免争用，在node粒度上去记录修改。
+### InCLL(in-cache-line logging)
+![image](/images/2022-07-06-in-cache-logging/Snipaste_2022-07-06_16-47-15.png)
 
-### InCLL
+如上图所示，一个node节点中存在三处InCLL,InCLL-p InCLL-1 InCLL-2  
+InCLL-p记录permutation区域和周期数，permutation区域是masstree记录key-value是否active的值（类似于bitmap）。
+InCLL-1 InCLL-2分别记录两个cache line中对应哪个value值的变化，如果是同一个value在一个周期内多次变化，那么就只记录一次。
