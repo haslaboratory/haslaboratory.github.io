@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: 实验室可用计算存储资源 
+title: 实验室可用计算存储资源
 permalink: /labserver.html
 redirect_from: /docs/research/labserver.html
 order: 10
@@ -16,9 +16,14 @@ order: 10
 | PC   | xxx            | 10.144.197.178 | 15       | 4       |
 
 # 部分资源展示
-<center><img src=" ..//images/服务器.png " width="30%"></center>
-<center><img src=" ..//images/服务器2.jpg " width="30%"></center>
-<center><img src=" ..//images/开发板.jpg " width="30%"></center>
+1.开发板：
+<center><img src=" ../../images/开发板.jpg " width="60%"></center>
+<br></br>
+2.服务器:
+<br></br>
+<center><img src=" ../../images/服务器2.jpg " width="30%"></center>
+<br></br>
+<center><img src=" ../../images/服务器.png " width="30%"> </center>
 
 
 # 服务器在用人员
@@ -86,4 +91,3 @@ sudo /etc/init.d/smbd restart
 2. [将文件服务器与磁盘驱动器映射](https://blog.csdn.net/hunanchenxingyu/article/details/9751639)，在Windows10，点击此电脑->映射网络驱动器。
 
 ![](..//images/2021-06-4-labserver/samba_driver.png)
-
