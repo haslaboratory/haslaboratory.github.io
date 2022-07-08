@@ -16,9 +16,9 @@ order: 10
 | PC   | xxx            | 10.144.197.178 | 15       | 4       |
 
 # 部分资源展示
-![](..//images/服务器.png)
-![](..//images/服务器2.jpg)
-![](..//images/开发板.jpg)
+<center><img src=" ..//images/服务器.png " width="30%"></center>
+<center><img src=" ..//images/服务器2.jpg " width="30%"></center>
+<center><img src=" ..//images/开发板.jpg " width="30%"></center>
 
 
 # 服务器在用人员
