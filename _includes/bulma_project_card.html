@@ -3,7 +3,10 @@
         <div class="card-content">
             <div class="media">
                 <figure class="media-left">
-                    <p class="image is-128x128">
+                    <p class="image is-128x128 is-hidden-mobile">
+                        <img src="/images/projects/{{ include.image }}">
+                    </p>
+                    <p class="image is-64x64 is-hidden-tablet">
                         <img src="/images/projects/{{ include.image }}">
                     </p>
                 </figure>
