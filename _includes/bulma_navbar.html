@@ -19,93 +19,76 @@
             <div class="navbar-start">
                 <a class="navbar-item" href="/">
                     <span class="icon has-text-primary">
-                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <i class="far fa-home"></i>
                     </span>
-                    <span>主页</span>
-                </a>
-
-                <a class="navbar-item" href="/publications.html">
-                    <span class="icon has-text-danger">
-                        <i class="fas fa-file"></i>
-                    </span>
-                    <span>论文</span>
+                    <span>Home</span>
                 </a>
 
                 <a class="navbar-item" href="/members/">
                     <span class="icon has-text-link">
                         <i class="far fa-user"></i>
                     </span>
-                    <span>成员</span>
+                    <span>Members</span>
+                </a>
+
+                <a class="navbar-item" href="/publications.html">
+                    <span class="icon has-text-danger">
+                        <i class="fas fa-file"></i>
+                    </span>
+                    <span>Publications</span>
                 </a>
 
                 <a class="navbar-item" href="/projects.html">
                     <span class="icon has-text-warning">
                         <i class="far fa-coffee"></i>
                     </span>
-                    <span>项目</span>
-                </a>
-
-                <a class="navbar-item" href="/blog/">
-                    <span class="icon has-text-link">
-                        <i class="fas fa-rss"></i>
-                    </span>
-                    <span>博客</span>
+                    <span>Projects</span>
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         <span class="icon has-text-success">
-                            <i class="fas fa-book"></i>
-                        </span>
-                        <span>教学</span>
-                    </a>
-                
-                    <div class="navbar-dropdown">
-                        {% assign lectures = site.lectures | where_exp: "item", "item.doc > 0" | sort: "doc" | reverse %}
-                        {% for lecture in lectures %}
-                        <a class="navbar-item" href="{{ lecture.url }}">
-                            {{ lecture.title }}
-                        </a>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        <span class="icon has-text-warning">
                             <i class="far fa-bookmark"></i>
                         </span>
-                        <span>文档</span>
+                        <span>Others</span>
                     </a>
                 
                     <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/blog/">
+                            <span class="icon has-text-success">
+                                <i class="fas fa-rss"></i>
+                            </span>
+                            <span>Blog</span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
                         {% assign docs = site.docs | where_exp: "item", "item.doc > 0" | sort: "doc", "last" %}
                         {% for doc in docs %}
                             <a class="navbar-item" href="{{ doc.url }}">
-                                {{ doc.title }}
+                                <span class="icon has-text-success">
+                                    <i class="far fa-paper-plane"></i>
+                                </span>
+                                <span>{{ doc.title }}</span>
                             </a>
                         {% endfor %}
 
                         <hr class="navbar-divider">
 
-                        <a class="navbar-item" href="/deadlines.html">
-                            截稿日期
+                        {% assign lectures = site.lectures | where_exp: "item", "item.doc > 0" | sort: "doc" | reverse %}
+                        {% for lecture in lectures %}
+                        <a class="navbar-item" href="{{ lecture.url }}">
+                            <span class="icon has-text-success">
+                                <i class="fas fa-book"></i>
+                            </span>
+                            <span>{{ lecture.title }}</span>
                         </a>
-
-                        <a class="navbar-item" href="/labserver.html">
-                            实验室可用计算存储资源
-                        </a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
 
             <div class="navbar-end">
-                <a class="navbar-item" href="https://github.com/has-lab">
-                    <span class="icon has-text-dark">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <span class="is-hidden-desktop">Github</span>
-                </a>
                 <a class="navbar-item" href="https://git.haslab.org">
                     <span class="icon has-text-danger">
                         <i class="fab fa-git"></i>
