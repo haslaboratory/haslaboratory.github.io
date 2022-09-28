@@ -1,27 +1,37 @@
 ---
-title: Research Projects
+title: 科研项目
+subtitle: Research Projects
 layout: page
 permalink: /projects.html
 ---
 
-<div class="block">
-  本研究小组专注于高性能计算机体系结构与系统的研发，主要的研究方向包括：
+<div class="content">
+  <h1>Research Topics</h1>
+</div>
 
-  <aside class="menu">
-    <ul class="menu-list">
-      <li><a>高性能计算机内存系统</a></li>
-      <li><a>非易失性内存</a></li>
-      <li><a>内存安全</a></li>
-      <li><a>固态硬盘</a></li>
-      <li><a>键值（KV）数据库</a></li>
-      <li><a>分布式存储系统</a></li>
-      <li><a>大数据</a></li>
-    </ul>
-  </aside>
+<div class="columns is-multiline">
+  <div class="column is-half">
+    {% include bulma_project_card.html image="csd.png" title="Computational Storage Device (CSD)" subtitle="可计算存储设备" %}
+  </div>
+  <div class="column is-half">
+    {% include bulma_project_card.html image="ssd.png" title="Solid-State Storage (SSS)" subtitle="固态存储系统" %}
+  </div>
+  <div class="column is-half">
+    {% include bulma_project_card.html image="uma.png" title="Unified Memory-Storage Architecture (UMA)" subtitle="统一内外存架构" %}
+  </div>
+  <div class="column is-half">
+    {% include bulma_project_card.html image="nvm.png" title="Emerging Non-Volatile Memories (NVM)" subtitle="新型非易失性内存" %}
+  </div>
+  <div class="column is-half">
+    {% include bulma_project_card.html image="rdma.png" title="Remote Direct Memory Access (RDMA)" subtitle="远程直接数据访问" %}
+  </div>
+  <div class="column is-half">
+    {% include bulma_project_card.html image="disaggregated.png" title="Disaggregated Storage Architecture" subtitle="分离式存储架构" %}
+  </div>
 </div>
 
 <div class="content">
-  <h1>Grants</h1>
+  <h1>Research Grants</h1>
 
   {% assign starts = site.data.projects | group_by: 'start' | sort: 'name' | reverse %}
 
