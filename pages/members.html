@@ -4,6 +4,7 @@ layout: page
 permalink: /members/
 ---
 
+
 <div class="tabs is-centered">
     <ul>
         <li class="is-active"><a href="/members/">
@@ -21,6 +22,8 @@ permalink: /members/
     </ul>
 </div>
 
+<div class="content">
+
 {% assign advisors = site.data.members | where:'degree', "Advisor" | sort:'join' %}
 {% assign doctors = site.data.members | where:'degree', "Doctor" | sort:'join' %}
 {% assign masters = site.data.members | where:'degree', "Master" | sort:'join' %}
@@ -31,7 +34,7 @@ permalink: /members/
 {% include bulma_members.html name="Master Students" members=masters %}
 {% include bulma_members.html name="Undergraduate Students" members=undergraduates %}
 
-## Past Students
+<h3>Past Students</h3>
 
 {% for member in site.data.members %}
 {% if member.leave != Nil %}
@@ -44,3 +47,5 @@ permalink: /members/
 {% endif %}
 {% endif %}
 {% endfor %}
+
+</div>

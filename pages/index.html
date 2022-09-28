@@ -1,0 +1,36 @@
+---
+title: 华中大高性能体系结构与系统实验室
+subtitle: HUST High-performance Architecture and System Laboratory
+layout: bulma_page
+permalink: /
+---
+
+<div class="columns">
+    <div class="column">
+        <div class="block">
+            <a href="/news.html" class="title is-5">NEWS</a>
+        </div>
+
+        {% assign news = site.data.news | slice: 0, 7 %}
+        {% include bulma_news.html news = news %}
+    </div>
+    <div class="column">
+        <div class="block">
+            <a href="/blog/" class="title is-5">BLOGS</a>
+        </div>
+        <aside class="menu">
+            <ul class="menu-list">
+                {% for post in site.posts limit:12 %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        {{ post.title }}
+                        {% for tag in post.tags limit:3 %}
+                        <span class="tag is-small is-link is-light">{{ tag }}</span>
+                        {% endfor %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </aside>
+    </div>
+</div>

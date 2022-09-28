@@ -1,0 +1,65 @@
+---
+title: Research Projects
+layout: page
+permalink: /projects.html
+---
+
+<div class="block">
+  本研究小组专注于高性能计算机体系结构与系统的研发，主要的研究方向包括：
+
+  <aside class="menu">
+    <ul class="menu-list">
+      <li><a>高性能计算机内存系统</a></li>
+      <li><a>非易失性内存</a></li>
+      <li><a>内存安全</a></li>
+      <li><a>固态硬盘</a></li>
+      <li><a>键值（KV）数据库</a></li>
+      <li><a>分布式存储系统</a></li>
+      <li><a>大数据</a></li>
+    </ul>
+  </aside>
+</div>
+
+<div class="content">
+  <h1>Grants</h1>
+
+  {% assign starts = site.data.projects | group_by: 'start' | sort: 'name' | reverse %}
+
+  {% for start in starts %}
+  <h2>{{ start.name }}</h2>
+
+  {% assign ends = start.items | group_by: 'end' | sort: 'name' | reverse %}
+
+  {% for end in ends %}
+
+  {% assign projects = end.items | sort: 'amount' |reverse %}
+
+  {% for project in projects %}
+
+  <div class="box">
+    {% if project.type == '基金' %}
+    <span class="tag is-danger">
+      {{project.type}}
+    </span>
+    {% else %}
+    <span class="tag is-warning">
+      {{project.type}}
+    </span>
+    {% endif %}
+    {% if project.role == '主持' %}
+    <span class="tag is-primary">
+      {{project.role}}
+    </span>
+    {% else %}
+    <span class="tag is-link">
+      {{project.role}}
+    </span>
+    {% endif %}
+    {{project.grant}}，{{project.title}}，{{project.amount}}万，{{project.start}}-{{project.end}}。
+  </div>
+
+  {% endfor %}
+
+  {% endfor %}
+  {% endfor %}
+</div>

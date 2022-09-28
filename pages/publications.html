@@ -4,10 +4,11 @@ layout: page
 permalink: /publications.html
 ---
 
+<div class="content">
 {% assign sorted = site.data.publications | sort: order %}
 {% for collections in sorted %}
 {% assign collection = collections[1] %}
-<h2>{{collection.order}}. {{collection.name}} ({{collection.publications.size}})</h2>
+<h2>{{collection.name}} ({{collection.publications.size}})</h2>
 {{collection.desc}}
 {% for publication in collection.publications %}
 <li>
@@ -15,3 +16,4 @@ permalink: /publications.html
 </li>
 {% endfor %}
 {% endfor %}
+</div>
