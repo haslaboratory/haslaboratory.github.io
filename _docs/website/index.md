@@ -20,3 +20,8 @@ Ubuntu/Debian下直接尝试下面命令一键安装+测试：
 bin/serve
 ```
 
+## 编译Scala.js
+
+```
+sbt fullOptJS::webpack
+```

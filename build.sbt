@@ -11,7 +11,7 @@ lazy val pages = project.in(file(".")).
     ),
     dependencyOverrides += "org.webjars.npm" % "js-tokens" % "3.0.2",
     npmDependencies in Compile ++= Seq(
-      "bulma" -> "0.8.2",
+      "bulma" -> "0.9.4",
       "font-awesome" -> "4.7.0",
       "react" -> "16.7.0",
       "react-dom" -> "16.7.0"
