@@ -2,13 +2,25 @@
 
 {% for nick in nicks %}
 
+{% assign user = site.data.members | where:"en", nick | first %}
+
+{% if user == nil %}
 {% assign user = site.data.members | where:"nick", nick | first %}
+{% endif %}
+
+{% if user == nil %}
+{% assign user = site.data.members | where:"cn", nick | first %}
+{% endif %}
 
 {% if user != nil %}
 <div class="control">
+  {% if user.page != nil %}
+  <a href="/@{{ user.page | slugify }}" class="tags has-addons">
+  {% else %}
   <a href="/members/#{{ user.nick | slugify }}" class="tags has-addons">
+  {% endif %}
     <span class="tag icon is-dark"><i class="far fa-user"></i></span>
-    <span class="tag is-info">{{ user.name }} ({{ user.nick }})</span>
+    <span class="tag is-info">{{ user.cn }} ({{ user.en }})</span>
   </a>
 </div>
 {% else %}

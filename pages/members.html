@@ -41,7 +41,7 @@ permalink: /members/
 {% if member.degree != "Undergraduate" %}
 <article class="message is-{% cycle 'dark', 'primary', 'link', 'info', 'success', 'warning', 'danger'%}">
     <div class="message-body">
-        <strong>{{ member.name }}</strong> <em>{{ member.degree}}</em> <em>{{ member.leave }} {{ member.description }}</em>
+        <strong>{{ member.cn }}</strong> <em>{{ member.degree}}</em> <em>{{ member.leave }} {{ member.description }}</em>
   </div>
 </article>
 {% endif %}

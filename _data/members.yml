@@ -1,26 +1,31 @@
-- nick: Jian Zhou
-  name: 周健
+- nick: jan
+  en: Jian Zhou
+  cn: 周健
+  page: jianzhou
   email: jianzhou@hust.edu.cn
   github: janzhou
   degree: Advisor
   join: 2020
 
 - nick: Premierpro
-  name: 魏华辰
+  en: Premierpro
+  cn: 魏华辰
   github: Premierpro
   degree: Master
   join: 2020
   description:
 
 - nick: Jianfeng Wu
-  name: 吴剑峰
+  en: Jianfeng Wu
+  cn: 吴剑峰
   github: MagnetSaki
   degree: Master
   join: 2020
   description:
 
 - nick: Liu Shi
-  name: 施柳
+  en: Liu Shi
+  cn: 施柳
   github: virgilshi
   degree: Master
   join: 2018
@@ -28,7 +33,8 @@
   description: 加入阿里云盘古团队。
 
 - nick: Qiulin Wu
-  name: 吴秋霖
+  en: Qiulin Wu
+  cn: 吴秋霖
   github: wuqiulin1995
   degree: Doctor
   join: 2017
@@ -36,7 +42,8 @@
   description: 加入华为上海研究所。
 
 - nick: Weizhou Huang
-  name: 黄维周
+  en: Weizhou Huang
+  cn: 黄维周
   github: huangweizhou
   degree: Doctor
   join: 2019
@@ -51,28 +58,32 @@
   description: I fall in love with learning of chip design and digital technology
 
 - nick: Ziqi Zhou
-  name: 周子淇
+  en: Ziqi Zhou
+  cn: 周子淇
   github: Small7-1999
   degree: Master
   join: 2021
   description:
 
 - nick: Zhang Zhengdi
-  name: 张正狄
+  en: Zhang Zhengdi
+  cn: 张正狄
   github: zzdkirov
   degree: Master
   join: 2021
   description:
 
 - nick: Qilin Tian
-  name: 田麒麟
+  en: Qilin Tian
+  cn: 田麒麟
   github: TianQiLin666666
   degree: Master (Academician of CAE)
   join: 2021
   description:
   
 - nick: Aoxin Wei
-  name: 魏澳鑫
+  en: Aoxin Wei
+  cn: 魏澳鑫
   github: justapawn
   degree: Doctor
   join: 2021
@@ -91,31 +102,36 @@
   github: xzcxzcyy
   degree: Undergraduate
   join: 2021
+  leave: 2022
   description:
 
 - nick: Jintian Wu
-  name: 吴锦添
+  en: Jintian Wu
+  cn: 吴锦添
   github: Wjt1127
   degree: Master
   join: 2022
   description:
   
 - nick: Xuda Zheng
-  name: 郑旭达
+  en: Xuda Zheng
+  cn: 郑旭达
   github: zxdhw
   degree: Doctor
   join: 2022
   description:
 
 - nick: Meng Wang
-  name: 王萌
+  en: Meng Wang
+  cn: 王萌
   github: welmon
   degree: Master
   join: 2022
   description:
 
 - nick: Yufan Jia
-  name: 贾雨凡
+  en: Yufan Jia
+  cn: 贾雨凡
   github: YufanJia
   degree: Master
   join: 2022
